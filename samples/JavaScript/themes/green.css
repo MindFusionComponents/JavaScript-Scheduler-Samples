@@ -1,0 +1,589 @@
+.mfp-planner.green .mfp-cue
+{
+    width:auto;
+    margin:0;
+}
+.mfp-planner.green .mfp-cue > i
+{
+    border:none;
+    transform: none;
+    -webkit-transform: none;
+}
+.mfp-planner.green .mfp-cue > i:before
+{
+    content: '...';	
+}
+.mfp-planner.green .mfp-selection
+{
+    background-color:#f8ffe2;
+}
+/**
+* Popup forms styles
+*/
+.mfp-popup.green
+{
+    color: #5D544F;
+    box-shadow: 4px 4px 4px rgba(0,0,0,0.35);
+    font-family: Verdana, Arial, Sans-Serif;
+    font-size: 8pt;
+    background: #fff;
+    border: solid 1px #829640;
+}
+.mfp-popup.green .mfp-popup-header
+{
+    color: #fff;
+    background-color: #829640;
+    border-color:#fff;
+}
+.mfp-popup.green .mfp-popup-header a.mfp-close-button
+{
+    opacity: 0.6;
+    filter: alpha(opacity=60);
+}
+.mfp-popup.green .mfp-popup-header a.mfp-close-button:before
+{
+    content: 'x';
+}
+.mfp-popup.green .mfp-popup-header a.mfp-close-button:hover
+{
+    opacity: 1;
+    filter: alpha(opacity=100);
+}
+.mfp-popup.green .mfp-popup-content
+{
+    margin: 10px 13px;
+}
+.mfp-popup.green .mfp-popup-title
+{
+     color: #5D544F;    
+}
+.mfp-popup.green a.mfp-button
+{
+    display: inline-block;
+    position: relative;
+    width: 92px;
+    height: 24px;
+    line-height: 24px;
+    margin: 0 5px;
+    color: #5D544F;
+    background-color: #fff;
+    border: solid 1px #829640;
+    text-align: center;
+}
+.mfp-popup.green a.mfp-button:hover
+{
+    color: #5D544F;
+    background-color: #fff;
+    border: solid 1px #90B2A6;
+}
+.mfp-popup.green .mfp-popup-content .mfp-text-area, 
+.mfp-popup.green .mfp-popup-content .mfp-text-box, 
+.mfp-popup.green .mfp-popup-content .mfp-dropDown-list,
+.mfp-popup.green .mfp-popup-content .mfp-checkbox-list
+{
+    border: 1px solid #829640;
+    vertical-align: middle;
+    box-sizing: border-box;
+    padding: 4px;
+    color:#5D544F;
+    font-family: Verdana, Arial, Sans-Serif;
+}
+.mfp-popup.green .mfp-popup-content .mfp-text-area:hover, 
+.mfp-popup.green .mfp-popup-content .mfp-text-box:hover, 
+.mfp-popup.green .mfp-popup-content .mfp-dropDown-list:hover, 
+.mfp-popup.green .mfp-popup-content .mfp-checkbox-list:hover
+{
+   border: solid 1px #90B2A6;
+}
+.mfp-popup.green .mfp-popup-content label
+{
+    vertical-align: middle;
+    margin-left: 3px;
+    margin-right: 6px;
+}
+.mfp-popup.green .mfp-popup-content .mfp-hr-line
+{
+    border-bottom: solid 1px #829640;
+    margin: 0 0 8px 0;
+    padding: 0 0 8px 0;
+}
+.mfp-popup.green .mfp-popup-content .mfp-checkbox-list
+{
+    display: inline-block;
+    width: 200px;
+    height: 100px;
+    overflow: auto;
+    border: 1px solid #829640;
+    background-color: #fff;
+    color: #5D544F;
+    padding: 1px;
+    margin-left: 6px;
+}
+.mfp-popup.green .mfp-popup-content .mfp-date-box .mfp-dropdown-button, 
+.mfp-popup.green .mfp-popup-content .mfp-time-box .mfp-dropdown-button
+{
+    display: inline-block;
+    cursor: pointer;
+    height: 23px;
+    margin: 0 !important;
+    text-decoration: none;
+    width: 22px;
+    vertical-align: middle;
+}
+.mfp-popup.green .mfp-dtpicker
+{
+    background-color: #fff;
+    border: solid 1px #829640;
+}
+.mfp-popup.green .mfp-dtpicker .mfp-dtpicker-header td:hover
+{
+    cursor: pointer;
+    color: #5D544F;
+    background-color: #fff;
+}
+.mfp-popup.green .mfp-dtpicker .mfp-dtpicker-content td
+{
+    padding: 3px;
+}
+.mfp-popup.green .mfp-dtpicker .mfp-dtpicker-content td.mfp-dtp-padding
+{
+    color: #5D544F;
+}
+.mfp-popup.green .mfp-dtpicker .mfp-dtpicker-content td.mfp-dtp-today
+{
+    border: 1px solid #829640;
+}
+.mfp-popup.green .mfp-dtpicker .mfp-dtpicker-content td.mfp-dtp-selected
+{
+    border: solid 1px #829640;
+    padding: 1px;
+    background-color: #fff;
+}
+.mfp-popup.green .mfp-dtpicker .mfp-dtpicker-content td:hover
+{
+    background-color: #90B2A6;
+    opacity: 0.6;
+    filter: alpha(opacity=60);
+    color: #5D544F;
+}
+/**
+* Horizontal list view styles
+*/
+.mfp-list-view.green,
+.mfp-list-view.green .mfp-bg-cell-header,
+.mfp-list-view.green .mfp-header-group,
+.mfp-list-view.green .mfp-bg-cell:not(:last-child)
+{
+    border: none;
+}
+.mfp-list-view.green .mfp-header
+{
+    color: #fff;
+    background-color: #829640;
+}
+.mfp-list-view.green .mfp-header-group
+{
+    color: #fff;
+    background-color: #829640;
+    text-align: center;
+    vertical-align: middle;
+    width:50px;
+}
+.mfp-list-view.green .mfp-bg-cell-header
+{
+    color: #444;
+    text-align: left;
+    padding: 2px;
+    border-bottom: solid 1px #829640;
+}
+.mfp-list-view.green .mfp-content .mfp-wrap .mfp-bg-row .mfp-bg-cell
+{
+     border-right: 1px solid #829640;
+}
+.mfp-list-view.green .mfp-content .mfp-wrap .mfp-bg-row
+{
+    border-bottom: 1px solid #829640;
+}
+.mfp-list-view.green .mfp-selection .mfp-bg-cell-header
+{
+    background-color: #e0e8c7;
+}
+/**
+* Horizontal timetable view styles
+*/
+.mfp-horizontal-timetable-view.green,
+.mfp-horizontal-timetable-view.green .mfp-header,
+.mfp-horizontal-timetable-view.green .mfp-header-timeline,
+.mfp-horizontal-timetable-view.green .mfp-column
+{
+    border: none;
+}
+.mfp-horizontal-timetable-view.green .mfp-header,
+.mfp-horizontal-timetable-view.green .mfp-header .mfp-title-table td.mfp-group-row
+{
+    background-color: #829640;
+    color: #fff;
+}
+.mfp-horizontal-timetable-view.green .mfp-header .mfp-title-table td.mfp-header-row
+{
+    background-color: #fff;
+    color: #829640;
+}
+.mfp-horizontal-timetable-view.green .mfp-header .mfp-title-table td.mfp-group-row > td
+{
+    padding:5px;
+}
+.mfp-horizontal-timetable-view.green .mfp-header .mfp-title-table td.mfp-item-row,
+.mfp-horizontal-timetable-view.green .mfp-header .mfp-title-table td.mfp-empty-row
+{
+    background-color: #829640;
+}
+.mfp-horizontal-timetable-view.green .mfp-header-timeline
+{
+    background-color: #829640;
+    color: #fff;
+}
+.mfp-horizontal-timetable-view.green .mfp-header .mfp-button
+{
+    border:none;
+}
+.mfp-horizontal-timetable-view.green .mfp-header-timeline .mfp-hour,
+.mfp-horizontal-timetable-view.green .mfp-header-timeline .mfp-group-time div:not(:first-child),
+.mfp-horizontal-timetable-view.green .mfp-header-timeline .mfp-time
+{
+    border-left: solid 1px #829640;
+}
+.mfp-horizontal-timetable-view.green .mfp-content .mfp-column .mfp-cell
+{
+    border: 1px solid #829640;
+    border-right-style: none;
+    border-top-style: none;
+}/**
+* Item styles
+*/
+.mfp-planner.green .mfp-item
+{
+    border:none;
+    border-radius:3px;
+    background-color: #505858;
+    color: #fff;
+}
+.mfp-planner.green .mfp-item-vertical-detail .mfp-time-indicator-wrapper,
+.mfp-planner.green .mfp-item-horizontal-detail .mfp-time-indicator-wrapper
+{
+    background-color: #B9C983;
+    border:1px solid #fff;
+}
+.mfp-planner.green .mfp-item-vertical-detail .mfp-time-indicator,
+.mfp-planner.green .mfp-item-horizontal-detail .mfp-time-indicator
+{
+    background-color: #505858;
+}
+.mfp-planner.green .mfp-selected .mfp-item
+{
+    background-color: #B9C983;
+}
+.mfp-planner.green .mfp-item .mfp-resize-start,
+.mfp-planner.green .mfp-item .mfp-resize-end
+{
+    border-color: #fff;
+}
+/* .mfp-planner.peach .mfp-recurrence .mfp-icons > span::before
+{
+    content: " ";
+    background-image: url(icons.png);
+    background-position: -50px -70px;
+    margin: 2px 1px;
+    height:13px;
+    width:15px;
+    display: block;	
+}
+.mfp-planner.peach .mfp-exception .mfp-icons > span::before
+{
+    content: " ";
+    background-image: url(icons.png);
+    background-position: -70px -70px;
+    margin: 2px 1px;
+    height:13px;
+    width:15px;
+    display: block;
+}
+.mfp-planner.peach .mfp-reminder .mfp-icons > span::after
+{
+    content: " ";
+    background-image: url(icons.png);
+    background-position: -330px -70px;
+    margin: 2px 1px;
+    height:13px;
+    width:15px;
+    display: block;
+} *//**
+* Vertical list view styles
+*/
+.mfp-vertical-list-view.green, 
+.mfp-vertical-list-view.green .mfp-bg-cell-header,
+.mfp-vertical-list-view.green .mfp-header,
+.mfp-vertical-list-view.green .mfp-bg-cell:not(:last-child)
+{
+    border: none;
+}
+.mfp-vertical-list-view.green .mfp-header
+{
+    color: #fff;
+    background-color: #829640;
+}
+.mfp-vertical-list-view.green .mfp-header-group
+{
+    color: #fff;
+    background-color: #829640;
+    height:50px;    
+}
+.mfp-vertical-list-view.green .mfp-bg-cell-header
+{
+    color: #5D544F;
+    text-align: left;
+    padding: 2px;
+    border-bottom: solid 1px #829640;
+}
+.mfp-vertical-list-view.green .mfp-content .mfp-wrap .mfp-bg-table .mfp-bg-cell
+{
+     border-right: 1px solid #829640;
+     border-bottom: 1px solid #829640;
+}
+.mfp-vertical-list-view.green .mfp-selection .mfp-bg-cell-header
+{
+    background-color:#90B2A6;
+}
+/**
+* Month views styles
+*/
+.mfp-month-view.green,
+.mfp-month-range-view.green,
+.mfp-month-view.green .mfp-header-weekdays,
+.mfp-month-view.green .mfp-header-weeknumbers
+{
+    border:none;
+}
+.mfp-month-view.green .mfp-header,
+.mfp-month-range-view.green .mfp-header
+{
+    background-color: #829640;
+    color: #fff;
+}
+.mfp-month-view.green .mfp-header .mfp-title,
+.mfp-month-range-view.green .mfp-header .mfp-title
+{
+      padding:10px;
+}
+.mfp-month-view.green .mfp-header .mfp-button,
+.mfp-month-range-view.green .mfp-header .mfp-button
+{
+    border:none;
+}
+.mfp-month-view.green .mfp-header .mfp-header-weekdays
+{
+     background-color: #829640;
+     color: #fff;
+     border-bottom: 2px solid #829640;
+}
+.mfp-month-view.green .mfp-header .mfp-header-weekdays .mfp-weekday
+{
+    text-align:left;
+}
+.mfp-month-view.green .mfp-header-weeknumbers .mfp-weeknumbers
+{
+    color: #fff;
+    background-color: #829640;
+    text-align: center;
+}
+.mfp-month-view.green .mfp-content .mfp-week
+{
+    border-top: 1px solid #829640;
+    background-color: #fff;
+}
+.mfp-month-view.green .mfp-content .mfp-week:last-child
+{
+    border-bottom: 1px solid #829640;
+}
+.mfp-month-view.green .mfp-bg-cell-header
+{
+    color: #5D544F;
+}
+.mfp-month-view.green .mfp-content .mfp-wrap .mfp-bg-row .mfp-bg-cell
+{
+     border-right: 1px solid #829640;
+}
+.mfp-month-view.green .mfp-bg-cell-header
+{
+    border-color: transparent;
+    text-align: left;
+    padding: 2px;
+    border-bottom: solid 1px #829640;
+}
+.mfp-month-view.green .mfp-cell-header
+{
+    padding: 2px;
+}
+.mfp-month-view.green .mfp-selection .mfp-bg-cell-header
+{
+    background-color: #e0e8c7;
+}/**
+* Resource view styles
+*/
+.mfp-resource-view.green
+{
+    border:none;
+}
+.mfp-resource-view.green .mfp-header
+{
+    color: #fff;
+    background-color: #829640;
+    border-color:#829640;
+}
+.mfp-resource-view.green .mfp-header-group
+{
+    color: #fff;
+    border-color:#829640;
+    background-color: #829640;
+    text-align: center;
+    vertical-align: middle;
+}
+.mfp-resource-view.green .mfp-header-group-wrap > div
+{
+    border-bottom:1px solid #829640;
+}
+.mfp-resource-view.green .mfp-header .mfp-timeline:nth-child(2)
+{
+    background-color: #fff;
+    color: #829640;
+    border-bottom:1px solid #829640;
+}
+.mfp-resource-view.green .mfp-header .mfp-timeline:last-child
+{
+    background-color: #829640;
+    color: #fff;
+}
+.mfp-resource-view.green .mfp-header .mfp-timeline:not(:last-child)
+{
+    padding: 4px 0px;
+}
+.mfp-resource-view.green .mfp-header .mfp-timeline div
+{
+    border-right: solid 1px #829640;
+}
+.mfp-resource-view.green .mfp-header .mfp-timeline:last-child div
+{
+    border-right: solid 1px transparent;
+    box-sizing: initial;
+}
+.mfp-resource-view.green .mfp-header .mfp-header-timeline .mfp-timeline:last-child div
+{
+    text-align: center;
+}
+.mfp-resource-view.green .mfp-wrapper .mfp-content .mfp-wrap .mfp-lane-table
+{
+	border-bottom: solid 2px #829640;
+}
+.mfp-resource-view.green .mfp-wrapper .mfp-content .mfp-wrap .mfp-lane-table tr
+{
+	border-bottom: 1px dashed #829640;
+}/**
+* Vertical timetable styles
+*/
+.mfp-timetable-view.green,
+.mfp-timetable-view.green .mfp-header,
+.mfp-timetable-view.green .mfp-header-timeline,
+.mfp-timetable-view.green .mfp-column
+{
+    border: none;
+}
+.mfp-timetable-view.green .mfp-header
+{
+    background-color: #829640;
+    color: #fff;
+}
+.mfp-timetable-view.green .mfp-header .mfp-title-table tr.mfp-header-row
+{
+    height:40px;
+}
+.mfp-timetable-view.green .mfp-header .mfp-title-table tr.mfp-group-row
+{
+    background-color: #fff;
+    color: #829640;
+}
+.mfp-timetable-view.green .mfp-header .mfp-title-table tr.mfp-group-row > td
+{
+    padding:5px;
+}
+.mfp-timetable-view.green .mfp-header .mfp-title-table tr.mfp-item-row,
+.mfp-timetable-view.green .mfp-header .mfp-title-table tr.mfp-empty-row
+{
+    background-color: #829640;
+}
+.mfp-timetable-view.green .mfp-header-timeline
+{
+    background-color: #829640;
+    color: #fff;
+}
+.mfp-timetable-view.green .mfp-header .mfp-button
+{
+    border:none;
+}
+.mfp-timetable-view.green .mfp-header-timeline .mfp-hour,
+.mfp-timetable-view.green .mfp-header-timeline .mfp-group-time div:not(:first-child),
+.mfp-timetable-view.green .mfp-header-timeline .mfp-time
+{
+    border-top: solid 1px #829640;
+}
+.mfp-timetable-view.green .mfp-content .mfp-column .mfp-cell
+{
+    border: 1px solid #829640;
+    border-right-style: none;
+    border-bottom-style: none;
+}/**
+* Week view styles
+*/
+.mfp-week-view.green,
+.mfp-week-view.green .mfp-header-weekdays
+{
+    border:none;
+}
+.mfp-week-view.green .mfp-header
+{
+    background-color: #829640;
+    color: #fff;
+}
+.mfp-week-view.green .mfp-header .mfp-title .mfp-link
+{
+    padding:10px;
+}
+.mfp-week-view.green .mfp-header .mfp-header-weekdays
+{
+     background-color: #829640;
+     color: #fff;
+}
+.mfp-week-view.green .mfp-content .mfp-week
+{
+    border-top: 1px solid #829640;
+    background-color: #fff;
+}
+.mfp-week-view.green .mfp-bg-cell-header
+{
+    border-color: transparent;
+    color: #5D544F;
+    text-align: left;
+    padding: 2px;
+    border-bottom: solid 1px #829640;
+}
+.mfp-week-view.green .mfp-cell-header
+{
+    padding: 2px;
+}
+.mfp-week-view.green .mfp-content .mfp-wrap .mfp-bg-row .mfp-bg-cell
+{
+     border-right: 1px solid #829640;
+}
+.mfp-week-view.green .mfp-selection .mfp-bg-cell-header
+{
+    background-color: #e0e8c7;
+}

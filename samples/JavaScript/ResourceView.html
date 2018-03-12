@@ -1,0 +1,91 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>MindFusion JsPlanner Sample - Resource view</title>
+	<link href="common/samples.css" rel="stylesheet" />
+	<link rel="stylesheet" type="text/css" href="themes/business.css" />
+	<style type="text/css">
+		select
+		{
+			width: 60px;
+		}
+	</style>
+</head>
+<body>
+	<div id="header" style="height: 59px;">
+		<div style="float: left;">
+			<div style="margin-top: 10px;">
+				Timelines&nbsp;<select id="timelines">
+					<option value="1">1</option>
+					<option value="2">2</option>
+					<option value="3">3</option>
+				</select>
+				Visible cells&nbsp;<input id="cells" maxlength="2" size="2" />
+				Top timeline: unit&nbsp;<select id="ttunit">
+					<option value="2">Hour</option>
+					<option value="3">Day</option>
+					<option value="4">Week</option>
+					<option value="5">Month</option>
+					<option value="6">Year</option>
+				</select>
+				count&nbsp;<input id="ttcount" maxlength="2" size="2" />
+				Middle timeline: unit&nbsp;<select id="mtunit">
+					<option value="2">Hour</option>
+					<option value="3">Day</option>
+					<option value="4">Week</option>
+					<option value="5">Month</option>
+					<option value="6">Year</option>
+				</select>
+				count&nbsp;<input id="mtcount" maxlength="2" size="2" />
+				Bottom timeline: unit&nbsp;<select id="btunit">
+					<option value="2">Hour</option>
+					<option value="3">Day</option>
+					<option value="4">Week</option>
+					<option value="5">Month</option>
+					<option value="6">Year</option>
+				</select>
+				count&nbsp;<input id="btcount" maxlength="2" size="2" />
+				<button onclick="group(1)">
+					Group by contacts</button>
+				<button onclick="group(3)">
+					Group by locations</button>
+			</div>
+		</div>
+		<div style="float: right; margin-right: 5px; margin-top: 17px;">
+			<a href="ResourceView.js" style="margin-right: 10px;">View source</a>
+			<button id="expandButton" onclick="onExpandCollapse()">
+				&gt;</button>
+		</div>
+	</div>
+	<div id="info" style="top: 70px; bottom: 24px;">
+		<div id="infoTab" style="padding: 10px;">
+			<h1>
+				About this sample</h1>
+			<p>
+				This sample shows the capabilities of the Resource view.
+				<br />
+				This view displays the distribution of items over a period of time for a particular
+				contacts, locations, tasks or resources. The view displays a single row for each
+				individual contact, location, task or resource and up to three timelines. In order
+				to view associated items in this view, the GroupType property of the Calendar must
+				be set to GroupByContacts, GroupByLocations, GroupByTasks or GroupByResources.
+				<br />
+				Use the ResourceViewSettings property of the Calendar class to set the appearance
+				of the resource view.
+			</p>
+		</div>
+	</div>
+	<div id="content" style="top: 70px; bottom: 24px;">
+		<div style="position: absolute; width: 100%; height: 100%;">
+			<div id="calendar" style="height: 100%; width: 100%;">
+			</div>
+		</div>
+	</div>
+	<div id="footer" style="height: 24px;">
+		<span id="copyright"></span>
+	</div>
+	<script src="MindFusion.Scheduling.js" type="text/javascript"></script>
+	<script src="ResourceView.js" type="text/javascript"></script>
+	<script type="text/javascript" src="common/samples.js"></script>
+</body>
+</html>
