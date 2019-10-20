@@ -1,4 +1,4 @@
-﻿var rulocale =  {
+export const locale =  {
     "locale": "ru-RU",
     "date": {
         "dateFormats": {

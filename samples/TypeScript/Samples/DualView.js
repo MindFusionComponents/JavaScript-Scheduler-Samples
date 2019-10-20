@@ -18,6 +18,7 @@ var DualView;
     calendar.timetableSettings.showDayHeader = false;
     // add some dates to the timetable view
     var date = p.DateTime.getWeekFirstDate(calendar.date);
+    calendar.timetableSettings.dates.clear();
     for (var i = 0; i < 7; i++) {
         calendar.timetableSettings.dates.add(p.DateTime.addDays(date, i).clone());
     }

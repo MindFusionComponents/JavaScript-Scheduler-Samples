@@ -1,0 +1,12 @@
+.mfp-planner .mfp-item-container.green .mfp-item
+{
+    background-color: rgba(60, 179, 113, 0.5);
+}
+.mfp-planner .mfp-item-container.red .mfp-item
+{
+    background-color: rgba(255, 99, 71, 0.5);
+}
+.mfp-planner .mfp-item-container.violet .mfp-item
+{
+    background-color: rgba(106, 90, 205, 0.5);
+}

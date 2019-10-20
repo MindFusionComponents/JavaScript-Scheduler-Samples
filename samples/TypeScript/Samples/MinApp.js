@@ -1,4 +1,4 @@
-// <reference path="jsplanner.d.ts" />
+/// <reference path="jsplanner.d.ts" />
 var MinApp;
 (function (MinApp) {
     var p = MindFusion.Scheduling;
@@ -22,5 +22,24 @@ var MinApp;
     theme.onchange = function () {
         calendar.theme = theme.value;
     };
+    var locale = document.getElementById("locale");
+    locale.onchange = function () {
+        var fileName = './localization/' + locale.value + '.json';
+        loadJSON(fileName, function (response) {
+            // load the locale from the JSON string
+            calendar.locale = JSON.parse(response);
+        });
+    };
+    function loadJSON(name, callback) {
+        var xobj = new XMLHttpRequest();
+        xobj.overrideMimeType("application/json");
+        xobj.open('GET', name, true);
+        xobj.onreadystatechange = function () {
+            if (xobj.readyState == 4 && xobj.status == 200) {
+                callback(xobj.responseText);
+            }
+        };
+        xobj.send(null);
+    }
 })(MinApp || (MinApp = {}));
 //# sourceMappingURL=MinApp.js.map

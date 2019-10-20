@@ -2,7 +2,12 @@
 // Project: http://www.mindfusion.eu/javascript-scheduler.html
 // Definitions by: MindFusion <http://www.mindfusion.eu>
 
-// Copyright (c) 2017-2018, MindFusion LLC - Bulgaria.
+// Copyright (c) 2018-2019, MindFusion LLC - Bulgaria.
+
+declare module "scheduler-library"
+{
+export = MindFusion.Scheduling;
+}
 
 declare namespace MindFusion.Scheduling
 {
@@ -447,10 +452,15 @@ declare namespace MindFusion.Scheduling
 		 * @param selector A function to test each element for a condition.
 		*/
 		where(selector: Function): IEnumerable;
-		/** Filters a sequence of values based on a predicate.
-		 * @param selector A function to test each element for a condition.
+		/** Executes a provided function once for each element.
+		 * @param callback A function to execute for each element.
+		 * @param context The invokation context.
 		*/
-		where(selector: Function): IEnumerable;
+		forEach(callback: Function, context: any): void;
+		/** Returns the first element in the collection. */
+		first(): any;
+		/** Returns the last element in the collection. */
+		last(): any;
 	}
 	/** Represents an array of arbitrary objects. */
 	class List extends IEnumerable
@@ -1302,6 +1312,10 @@ declare namespace MindFusion.Scheduling
 		clear(): void;
 		/** Checks if the selection is empty. */
 		isEmpty(): boolean;
+		/** Gets or sets a value indicating whether users are allowed to select date cells. */
+		enabled: boolean;
+		/** Gets or sets a value indicating whether users are allowed to select more than one date cell at a time. */
+		allowMultiple: boolean;
 	}
 	/** Defines properties that allow customization of the appearance of a Month view. */
 	class MonthSettings
@@ -1338,6 +1352,8 @@ declare namespace MindFusion.Scheduling
 		firstDayOfYearFormat: string;
 		/** Gets or sets the maximum number of items to display in a cell. */
 		maxItems: number;
+		/** Gets or sets a value indicating whether day headers should fill the whole day cell. */
+		expandDayHeaders: boolean;
 	}
 	/** Defines properties that allow customization of the appearance of a MonthRange view. */
 	class MonthRangeSettings
@@ -1416,6 +1432,8 @@ declare namespace MindFusion.Scheduling
 		firstDayOfYearFormat: string;
 		/** Gets or sets the maximum number of items to display in a cell. */
 		maxItems: number;
+		/** Gets or sets a value indicating whether day headers should fill the whole day cell. */
+		expandDayHeaders: boolean;
 	}
 	/** Defines properties that allow customization of the appearance of a Timetable view. */
 	class TimetableSettings
@@ -1508,6 +1526,10 @@ declare namespace MindFusion.Scheduling
 		showContinuationArrows: boolean;
 		/** Gets or sets a value indicating whether to display a 'more items' link in a calendar cell which isn't big enough to contain all of its items. */
 		showCues: boolean;
+		/** Gets or sets a value indicating how to format and display item tooltips. */
+		tooltipFormat: string;
+		/** Gets or sets a value indicating how to format and display item titles. */
+		titleFormat: string;
 	}
 	/** Represents a timetable of scheduled events. */
 	class Schedule
@@ -1561,6 +1583,18 @@ declare namespace MindFusion.Scheduling
 		 * @param json A string created by the toJson method.
 		*/
 		fromJson(json: string): void;
+		/** Retrieves all events, including recurrent item instances, scheduled to occur in the specified time interval.
+		 * @param startTime Time interval start.
+		 * @param endTime Time interval end.
+		 * @param resource A resource that must be related to the event.
+		*/
+		getAllItems(startTime: DateTime, endTime?: DateTime, resource?: Resource): List;
+		/** Raised when the items collection is changing. */
+		itemsChanging: EventDispatcher;
+		/** Raised when the items collection is changed. */
+		itemsChanged: EventDispatcher;
+		/** Raised when the schedule is changed. */
+		changed: EventDispatcher;
 	}
 	/** The Calendar control serves as a view in document-view architecture, where the document is implemented by the Schedule class */
 	class Calendar
@@ -1590,13 +1624,21 @@ declare namespace MindFusion.Scheduling
 		/** Repaints the calendar contents
 		 * @param full True to recreate calendar items, otherwise false.
 		*/
-		repaint(full: boolean): void;
+		repaint(full?: boolean): void;
 		/** Gets the actual group type */
 		realGroupType: GroupType;
 		/** Gets or sets the date of the calendar. */
 		date: DateTime;
 		/** Gets or sets the end date of the calendar. */
 		endDate: DateTime;
+		/** Gets the start time of the first calendar cell. */
+		startTime: DateTime;
+		/** Gets the end time of the last calendar cell. */
+		endTime: DateTime;
+		/** Gets the start time of the first calendar cell, that can contain items. */
+		itemsStartTime: DateTime;
+		/** Gets the end time of the last calendar cell, that can contain items. */
+		itemsEndTime: DateTime;
 		/** Gets the tasks whose schedule to display when the GroupType property is set to GroupByTasks or FilterByTasks. */
 		tasks: ObservableCollection;
 		/** Gets the contacts whose schedule to display when the GroupType property is set to GroupByContacts or FilterByContacts. */
@@ -1621,8 +1663,6 @@ declare namespace MindFusion.Scheduling
 		useForms: boolean;
 		/** Gets or sets a value indicating whether to show tooltips. */
 		showTooltips: boolean;
-		/** Gets or sets a value indicating how to format and display item tooltips. */
-		itemTooltipFormat: string;
 		/** Gets or sets a value indicating how to format and display contact names in view headers. */
 		contactNameFormat: string;
 		/** Gets or sets the schedule to be displayed inside the calendar. */
@@ -1675,6 +1715,20 @@ declare namespace MindFusion.Scheduling
 		 * @param y The Y-coordinate of the point.
 		*/
 		getCellAt(x: number, y: number): ViewCell;
+		/** Gets the specified item's visual elements.
+		 * @param item The item.
+		*/
+		getItemDom(item: Item): Array<HTMLDivElement>;
+		/** Gets the calendar view cells that hold the specified item's visual elements.
+		 * @param item The item.
+		*/
+		getItemCells(item: Item): Array<ViewCell>;
+		/** Gets the items, whose visual elements are contained in the specified calendar cell.
+		 * @param cell The cell to check.
+		*/
+		getCellItems(cell: ViewCell): Array<Item>;
+		/** Raised when the schedule is changed. */
+		scheduleChanged: EventDispatcher;
 		/** Raised when the control is loaded. */
 		calendarLoad: EventDispatcher;
 		/** Raised when the calendar date is changed. */
@@ -1699,22 +1753,10 @@ declare namespace MindFusion.Scheduling
 		itemDeleted: EventDispatcher;
 		/** Raised while a recurring item is being deleted. */
 		recurringItemDeleting: EventDispatcher;
-		/** Raised when an inplace edit operation is started. */
-		itemInplaceEditStart: EventDispatcher;
-		/** Raised  when an inplace edit operation has ended. */
-		itemInplaceEditEnd: EventDispatcher;
 		/** Raised when an item remider is triggered. */
 		itemReminderTriggered: EventDispatcher;
 		/** Raised when an task remider is triggered. */
 		taskReminderTriggered: EventDispatcher;
-		/** Raised when a drag operation is started. */
-		itemDragStart: EventDispatcher;
-		/** Raised when a drag operation has ended. */
-		itemDragEnd: EventDispatcher;
-		/** Raised when a resize operation is started. */
-		itemResizeStart: EventDispatcher;
-		/** Raised when a resize operation has ended. */
-		itemResizeEnd: EventDispatcher;
 		/** Raised when an item is clicked. */
 		itemClick: EventDispatcher;
 		/** Raised when an item is double-clicked. */
@@ -1744,8 +1786,6 @@ declare namespace MindFusion.Scheduling
 		 * @param item The item instance associated with this form.
 		*/
 		constructor(calendar: Calendar, item: Item);
-		/** Returns the controls collection. */
-		getControls(): Dictionary;
 		/** Adds the specified control to the collection of controls.
 		 * @param control The control to add.
 		*/
@@ -1804,16 +1844,18 @@ declare namespace MindFusion.Scheduling
 		drawContent(): void;
 		/** Renders the form buttons. */
 		drawButtons(): void;
-		/** Returns a reference to the DOM element of the form content. */
-		getContent(): HTMLDivElement;
-		/** Returns a reference to the DOM element of the form header. */
-		getHeader(): HTMLDivElement;
 		/** Renders a row element. */
 		row(): HTMLDivElement;
 		/** Renders a column element. */
 		col(): HTMLDivElement;
 		/** Renders a horizontal line divider. */
 		divider(): HTMLHRElement;
+		/** Gets a reference to the schedule item, whose information is displayed in the form. */
+		item: Item;
+		/** Gets a reference to the parent Calendar control. */
+		calendar: Calendar;
+		/** Gets the controls collection. */
+		controls: Dictionary;
 		/** Gets the locale object used to format and display date and time information in the form. */
 		formatInfo: any;
 		/** Gets the locale object used to format and display localizable strings in the form. */
@@ -1824,6 +1866,12 @@ declare namespace MindFusion.Scheduling
 		id: string;
 		/** Gets or sets the text which is displayed in the header of the form. */
 		headerText: string;
+		/** Returns a reference to the form DOM element. */
+		element: HTMLDivElement;
+		/** Returns a reference to the DOM element of the form content. */
+		content: HTMLDivElement;
+		/** Returns a reference to the DOM element of the form header. */
+		header: HTMLDivElement;
 	}
 	/** Specifies data for form related events. */
 	class FormEventArgs extends CancelEventArgs
@@ -1860,10 +1908,12 @@ declare namespace MindFusion.Scheduling
 		resource: Resource;
 	}
 	/** Specifies data for item related events. */
-	class ItemEventArgs extends CancelEventArgs
+	class ItemEventArgs extends EventArgs
 	{
 		/** Gets the item related to the event. */
 		item: Item;
+		/** Gets the Javascript event data. */
+		rawEventArgs: any;
 	}
 	/** Specifies data for the ItemModifying event. */
 	class ItemModifyingEventArgs extends CancelEventArgs

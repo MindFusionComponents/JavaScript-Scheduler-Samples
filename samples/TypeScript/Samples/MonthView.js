@@ -69,5 +69,11 @@ var MonthView;
         calendar.monthSettings.showPaddingItems = showPaddingItems.checked;
         showPaddingItems.checked = calendar.monthSettings.showPaddingItems;
     };
+    var expandDayHeaders = document.getElementById("expandDayHeaders");
+    expandDayHeaders.checked = calendar.monthSettings.expandDayHeaders;
+    expandDayHeaders.onchange = function () {
+        calendar.monthSettings.expandDayHeaders = expandDayHeaders.checked;
+        expandDayHeaders.checked = calendar.monthSettings.expandDayHeaders;
+    };
 })(MonthView || (MonthView = {}));
 //# sourceMappingURL=MonthView.js.map

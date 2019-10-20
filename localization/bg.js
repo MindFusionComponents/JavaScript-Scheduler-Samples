@@ -1,4 +1,4 @@
-﻿var bglocale =  {
+﻿export const locale = {
         "locale": "bg-BG",
         "date": {
             "dateFormats": {

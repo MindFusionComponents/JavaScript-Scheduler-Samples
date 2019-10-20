@@ -1,4 +1,4 @@
-﻿// <reference path="jsplanner.d.ts" />
+﻿/// <reference path="jsplanner.d.ts" />
 
 namespace MinApp
 {
@@ -21,6 +21,7 @@ namespace MinApp
 	// render the calendar control
 	calendar.render();
 
+
 	export function changeView(value)
 	{
 		calendar.currentView = value;
@@ -32,4 +33,31 @@ namespace MinApp
 	{
 		calendar.theme = theme.value;
 	}
+
+	let locale = document.getElementById("locale") as HTMLInputElement;
+	locale.onchange = () =>
+	{
+		var fileName = './localization/' + locale.value + '.json';
+		loadJSON(fileName, function (response)
+		{
+			// load the locale from the JSON string
+			calendar.locale = JSON.parse(response);
+		});
+	}
+
+	function loadJSON(name, callback)
+	{
+		var xobj = new XMLHttpRequest();
+		xobj.overrideMimeType("application/json");
+		xobj.open('GET', name, true);
+		xobj.onreadystatechange = function ()
+		{
+			if (xobj.readyState == 4 && xobj.status == 200)
+			{
+				callback(xobj.responseText);
+			}
+		};
+		xobj.send(null);
+	}
 }
+

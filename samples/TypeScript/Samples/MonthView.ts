@@ -94,6 +94,12 @@ namespace MonthView
 		showPaddingItems.checked = calendar.monthSettings.showPaddingItems;
 	}
 
-
+	let expandDayHeaders = document.getElementById("expandDayHeaders") as HTMLInputElement;
+	expandDayHeaders.checked = calendar.monthSettings.expandDayHeaders;
+	expandDayHeaders.onchange = () =>
+	{
+		calendar.monthSettings.expandDayHeaders = expandDayHeaders.checked;
+		expandDayHeaders.checked = calendar.monthSettings.expandDayHeaders;
+	}
 
 }

@@ -18,8 +18,29 @@ namespace Items
 	calendar.timetableSettings.dates.add(p.DateTime.today().addDays(1));
 	calendar.timetableSettings.dates.add(p.DateTime.today().addDays(2));
 
+	// specify formats for item titles and tooltips
+	calendar.itemSettings.titleFormat = "%s[hh:mm tt] %h";
+	calendar.itemSettings.tooltipFormat = "%h %d";
+
 	// handle the itemReminderTriggered to show an alert when an item's reminder is up
 	calendar.itemReminderTriggered.addEventListener(function (sender, args) { alert(args.item.reminder.message); });
+
+	calendar.itemModifying.addEventListener(handleItemModifying);
+	calendar.itemModified.addEventListener(handleItemModified);
+
+	calendar.calendarLoad.addEventListener(handleCalendarLoad);
+
+	function handleCalendarLoad(sender, args)
+	{
+		var start = p.DateTime.today();
+		var end = start.clone().addDays(1);
+		var cells = calendar.getTimeCells(start, end, true);
+		for (var i = 0; i < cells.length; i++)
+		{
+			cells[i].bgCell.style.backgroundColor = "#ffeecc";
+		}
+	}
+
 
 	var resource;
 
@@ -97,6 +118,16 @@ namespace Items
 
 	calendar.schedule.items.add(item);
 
+	function handleItemModifying(sender, args)
+	{
+		args.cancel = (args.item.cssClass == "myItemClass");
+	}
+
+	function handleItemModified(sender, args)
+	{
+		args.item.cssClass = "modItemClass";
+	}
+
 	export function changeView(value)
 	{
 		calendar.currentView = value;
@@ -106,7 +137,7 @@ namespace Items
 	size.value = calendar.itemSettings.size.toString();
 	size.onchange = () =>
 	{
-		calendar.itemSettings.size = +size.value || 17;
+		calendar.itemSettings.size = Math.max(+size.value, 1);
 		size.value = calendar.itemSettings.size.toString();
 	}
 
@@ -114,7 +145,7 @@ namespace Items
 	spacing.value = calendar.itemSettings.spacing.toString();
 	spacing.onchange = () =>
 	{
-		calendar.itemSettings.spacing = +spacing.value || 2;
+		calendar.itemSettings.spacing = Math.max(+spacing.value, 0);
 		spacing.value = calendar.itemSettings.spacing.toString();
 	}
 

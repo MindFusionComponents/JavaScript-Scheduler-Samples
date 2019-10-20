@@ -8,8 +8,6 @@
 {
     color: #404040;
     box-shadow: 4px 4px 4px rgba(0,0,0,0.35);
-    font-family: Verdana, Arial, Sans-Serif;
-    font-size: 8pt;
     background: #e6e6e6;
     border: solid 1px #818284;
 }
@@ -22,10 +20,6 @@
 {
     opacity: 0.6;
     filter: alpha(opacity=60);
-}
-.mfp-popup.standard .mfp-popup-header a.mfp-close-button:before
-{
-    content: 'x';
 }
 .mfp-popup.standard .mfp-popup-header a.mfp-close-button:hover
 {
@@ -49,7 +43,6 @@
     height: 24px;
     line-height: 24px;
     margin: 0 5px;
-    font-weight: bold;
     color: #404040;
     background-color: #B4B4BE;
     border: solid 1px #6E6E78;
@@ -105,13 +98,7 @@
 .mfp-popup.standard .mfp-popup-content .mfp-date-box .mfp-dropdown-button, 
 .mfp-popup.standard .mfp-popup-content .mfp-time-box .mfp-dropdown-button
 {
-    display: inline-block;
-    cursor: pointer;
-    height: 23px;
-    margin: 0 !important;
-    text-decoration: none;
-    width: 22px;
-    vertical-align: middle;
+    background-image: url("icons/black/small.png");
 }
 .mfp-popup.standard .mfp-dtpicker
 {
@@ -269,27 +256,13 @@
 {
     border-color: #fff;
 }
-/* 
-.mfp-planner.standard .mfp-recurrence .mfp-icons > span::before
+.mfp-planner.standard .mfp-reminder .mfp-item .mfp-icons > span::after,
+.mfp-planner.standard .mfp-recurrence .mfp-item .mfp-icons > span::before,
+.mfp-planner.standard .mfp-exception .mfp-item .mfp-icons > span::before
 {
-    content: " ";
-    background-image: url(icons.png);
-    background-position: -50px -70px;
-    margin: 2px 1px;
-    height:13px;
-    width:15px;
-    display: block;	
+    background-image: url("icons/white/small.png");
 }
-.mfp-planner.standard .mfp-exception .mfp-icons > span::before
-{
-    content: " ";
-    background-image: url(icons.png);
-    background-position: -70px -70px;
-    margin: 2px 1px;
-    height:13px;
-    width:15px;
-    display: block;
-} *//**
+/**
 * Vertical list view styles
 */
 .mfp-vertical-list-view.standard, 
@@ -351,8 +324,8 @@
 .mfp-month-view.standard .mfp-header .mfp-title,
 .mfp-month-range-view.standard .mfp-header .mfp-title
 {
-      background-color: #818284;
-      padding:10px;
+    background-color: #818284;
+    padding:10px;
 }
 .mfp-month-view.standard .mfp-header .mfp-button,
 .mfp-month-range-view.standard .mfp-header .mfp-button
@@ -366,9 +339,9 @@
 }
 .mfp-month-view.standard .mfp-header-weeknumbers .mfp-weeknumbers
 {
-   color: #818284;
+    color: #818284;
     background-color: #e6e6e6;
-   text-align: center;
+    text-align: center;
     border-right: 1px solid #818284;
 }
 .mfp-month-view.standard .mfp-content .mfp-week

@@ -12,8 +12,22 @@ var Items;
     calendar.timetableSettings.dates.add(p.DateTime.today());
     calendar.timetableSettings.dates.add(p.DateTime.today().addDays(1));
     calendar.timetableSettings.dates.add(p.DateTime.today().addDays(2));
+    // specify formats for item titles and tooltips
+    calendar.itemSettings.titleFormat = "%s[hh:mm tt] %h";
+    calendar.itemSettings.tooltipFormat = "%h %d";
     // handle the itemReminderTriggered to show an alert when an item's reminder is up
     calendar.itemReminderTriggered.addEventListener(function (sender, args) { alert(args.item.reminder.message); });
+    calendar.itemModifying.addEventListener(handleItemModifying);
+    calendar.itemModified.addEventListener(handleItemModified);
+    calendar.calendarLoad.addEventListener(handleCalendarLoad);
+    function handleCalendarLoad(sender, args) {
+        var start = p.DateTime.today();
+        var end = start.clone().addDays(1);
+        var cells = calendar.getTimeCells(start, end, true);
+        for (var i = 0; i < cells.length; i++) {
+            cells[i].bgCell.style.backgroundColor = "#ffeecc";
+        }
+    }
     var resource;
     // add some contacts to the schedule.contacts collection
     resource = new p.Contact();
@@ -74,6 +88,12 @@ var Items;
     reminder.timeInterval = p.TimeSpan.fromMinutes(1);
     item.reminder = reminder;
     calendar.schedule.items.add(item);
+    function handleItemModifying(sender, args) {
+        args.cancel = (args.item.cssClass == "myItemClass");
+    }
+    function handleItemModified(sender, args) {
+        args.item.cssClass = "modItemClass";
+    }
     function changeView(value) {
         calendar.currentView = value;
     }
@@ -81,13 +101,13 @@ var Items;
     var size = document.getElementById("size");
     size.value = calendar.itemSettings.size.toString();
     size.onchange = function () {
-        calendar.itemSettings.size = +size.value || 17;
+        calendar.itemSettings.size = Math.max(+size.value, 1);
         size.value = calendar.itemSettings.size.toString();
     };
     var spacing = document.getElementById("spacing");
     spacing.value = calendar.itemSettings.spacing.toString();
     spacing.onchange = function () {
-        calendar.itemSettings.spacing = +spacing.value || 2;
+        calendar.itemSettings.spacing = Math.max(+spacing.value, 0);
         spacing.value = calendar.itemSettings.spacing.toString();
     };
     var itemClass = document.getElementById("itemClass");

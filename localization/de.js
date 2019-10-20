@@ -1,4 +1,4 @@
-﻿var delocale = {
+export const locale = {
     "locale": "de-DE",
     "date": {
         "dateFormats": {
@@ -8,7 +8,7 @@
             "longTime": "HH:mm:ss",
             "dayMonth": "d.M",
             "yearMonth": "MMMM, yyyy",
-            "full": "d. MMMM y HH:mm:ss"
+            "full": "EEEE d. MMMM y G HH:mm:ss"
         },
         "months": {
             "narrow": [

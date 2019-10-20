@@ -1,5 +1,6 @@
-var p = MindFusion.Scheduling;
+/// <reference path="MindFusion.Scheduling-vsdoc.js" /> 
 
+var p = MindFusion.Scheduling;
 
 // create a new instance of the calendar 
 var calendar = new p.Calendar(document.getElementById("calendar"));
@@ -15,8 +16,28 @@ calendar.timetableSettings.dates.add(p.DateTime.today());
 calendar.timetableSettings.dates.add(p.DateTime.today().addDays(1));
 calendar.timetableSettings.dates.add(p.DateTime.today().addDays(2));
 
+// specify formats for item titles and tooltips
+calendar.itemSettings.titleFormat = "%s[hh:mm tt] %h";
+calendar.itemSettings.tooltipFormat = "%h %d";
+
 // handle the itemReminderTriggered to show an alert when an item's reminder is up
 calendar.itemReminderTriggered.addEventListener(function (sender, args) { alert(args.item.reminder.message); });
+
+calendar.itemModifying.addEventListener(handleItemModifying);
+calendar.itemModified.addEventListener(handleItemModified);
+
+calendar.calendarLoad.addEventListener(handleCalendarLoad);
+
+function handleCalendarLoad(sender, args)
+{
+	var start = p.DateTime.today();
+	var end = start.clone().addDays(1);
+	var cells = sender.getTimeCells(start, end, true);
+	for (var i = 0; i < cells.length; i++)
+	{
+		cells[i].bgCell.style.backgroundColor = "#ffeecc";
+	}
+}
 
 var resource;
 
@@ -66,7 +87,7 @@ for (var i = 0; i < 15; i++)
 // add a recurrent item
 item = new p.Item();
 item.startTime = p.DateTime.fromDateParts(date.year, date.month, date.day, 14, 0, 0);
-item.endTime =  p.DateTime.fromDateParts(date.year, date.month, date.day, 16, 0, 0);
+item.endTime = p.DateTime.fromDateParts(date.year, date.month, date.day, 16, 0, 0);
 item.subject = "Take a power nap";
 item.details = "zzz";
 
@@ -94,6 +115,16 @@ item.reminder = reminder;
 
 calendar.schedule.items.add(item);
 
+function handleItemModifying(sender, args)
+{
+	args.cancel = (args.item.cssClass == "myItemClass");
+}
+
+function handleItemModified(sender, args)
+{
+	args.item.cssClass = "modItemClass";
+}
+
 function changeView(value)
 {
 	this.calendar.currentView = value;
@@ -102,14 +133,14 @@ function changeView(value)
 document.getElementById("size").value = calendar.itemSettings.size;
 document.getElementById("size").onchange = function ()
 {
-	calendar.itemSettings.size = +document.getElementById("size").value || 17;
+	calendar.itemSettings.size = Math.max(+document.getElementById("size").value, 1);
 	document.getElementById("size").value = calendar.itemSettings.size;
 }
 
 document.getElementById("spacing").value = calendar.itemSettings.spacing;
 document.getElementById("spacing").onchange = function ()
 {
-	calendar.itemSettings.spacing = +document.getElementById("spacing").value || 2;
+	calendar.itemSettings.spacing = Math.max(+document.getElementById("spacing").value, 0);
 	document.getElementById("spacing").value = calendar.itemSettings.spacing;
 }
 
@@ -124,11 +155,13 @@ function clearItems()
 }
 
 var xmldoc;
-function toXml() {
+function toXml()
+{
 	xmldoc = calendar.schedule.toXmlDocument();
 }
 
-function fromXml() {
+function fromXml()
+{
 	if (xmldoc)
 		calendar.schedule.fromXmlDocument(xmldoc);
 	else alert('Save a schedule to load.')

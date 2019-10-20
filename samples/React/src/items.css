@@ -1,0 +1,19 @@
+.mfp-planner.light .itemClass1 .mfp-item
+{
+    background-color: #eee;
+}
+.mfp-planner.light .itemClass2 .mfp-item
+{
+    background-color: lightBlue;
+}
+.mfp-planner.light .myItemClass .mfp-item
+{
+    background-color: salmon;
+}
+.mfp-planner.light .modItemClass .mfp-item .mfp-icons:after
+{
+    content: "*";
+    font-size: x-large;
+    line-height: 30px;
+    color: #fff;
+}

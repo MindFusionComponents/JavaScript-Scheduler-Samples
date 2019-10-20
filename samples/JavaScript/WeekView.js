@@ -1,7 +1,10 @@
+/// <reference path="MindFusion.Scheduling-vsdoc.js" /> 
+
 var p = MindFusion.Scheduling;
 
 // create a new instance of the calendar
 calendar = new p.Calendar(document.getElementById("calendar"));
+
 // set the view to WeekRange
 calendar.currentView = p.CalendarView.WeekRange;
 
@@ -9,7 +12,6 @@ calendar.theme = "light";
 
 // render the calendar control
 calendar.render();
-
 
 document.getElementById("viewStyle").value = calendar.weekRangeSettings.viewStyle;
 document.getElementById("viewStyle").onchange = function () {

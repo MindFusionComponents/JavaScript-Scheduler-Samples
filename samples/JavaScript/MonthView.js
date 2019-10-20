@@ -1,9 +1,13 @@
+/// <reference path="MindFusion.Scheduling-vsdoc.js" /> 
+
 var p = MindFusion.Scheduling;
 
 // create a new instance of the calendar
 calendar = new p.Calendar(document.getElementById("calendar"));
+
 // set the view to SingleMonth
 calendar.currentView = p.CalendarView.SingleMonth;
+
 settings = calendar.monthSettings;
 calendar.theme = "light";
 
@@ -68,4 +72,11 @@ document.getElementById("showPaddingItems").checked = calendar.monthSettings.sho
 document.getElementById("showPaddingItems").onchange = function () {
 	calendar.monthSettings.showPaddingItems = document.getElementById("showPaddingItems").checked;
 	document.getElementById("showPaddingItems").checked = calendar.monthSettings.showPaddingItems;
+}
+
+document.getElementById("expandDayHeaders").checked = calendar.monthSettings.expandDayHeaders;
+document.getElementById("expandDayHeaders").onchange = function ()
+{
+	calendar.monthSettings.expandDayHeaders = document.getElementById("expandDayHeaders").checked;
+	document.getElementById("expandDayHeaders").checked = calendar.monthSettings.expandDayHeaders;
 }

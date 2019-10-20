@@ -6,10 +6,12 @@ var Views;
     var calendar = new p.Calendar(document.getElementById("calendar"));
     // set the view to MonthRange, which displays several months in a grid
     calendar.currentView = p.CalendarView.MonthRange;
-    calendar.theme = "standard";
+    calendar.theme = "blue";
     // stop navigation buttons from rendering in Month and Timetable views
     calendar.monthSettings.headerStyle = p.MainHeaderStyle.Title;
     calendar.timetableSettings.headerStyle = p.MainHeaderStyle.Title;
+    calendar.monthSettings.expandDayHeaders = true;
+    calendar.itemSettings.showCues = false;
     // attach handlers
     calendar.selectionEnd.addEventListener(handleSelectionEnd);
     calendar.headerClick.addEventListener(handleHeaderClick);

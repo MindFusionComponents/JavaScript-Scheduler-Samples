@@ -1,0 +1,104 @@
+		.mfp-planner.booking
+		{
+			font-size: larger;
+		}
+		.mfp-planner.booking .mfp-popup-header
+		{
+			display: none;
+		}
+		.mfp-planner.booking .mfp-weekday
+		{
+			background-color: #7FDBFF;
+			color: #fff;
+			font-size: xx-large;
+			padding: 20px 0;
+		}
+		.mfp-planner.booking .mfp-bg-cell
+		{
+			padding: 10px;
+		}
+		.mfp-planner.booking .mfp-planner.light .mfp-bg-cell.mfp-selection
+		{
+			background-color: #fff;
+		}
+		.mfp-planner.booking .mfp-bg-cell.mfp-selection .mfp-bg-cell-header
+		{
+			border-radius: 15px;
+			color: #fff;
+			background-color: #7FDBFF;
+		}
+		.mfp-planner.booking .mfp-bg-cell.mfp-weekend-cell .mfp-bg-cell-header
+		{
+			color: #FF4136;	
+		}
+		.mfp-planner.booking .mfp-bg-cell.mfp-empty-cell
+		{
+			border-right-color: transparent;
+		}
+		.mfp-planner.booking .mfp-cue
+		{
+			background-color: #fff;
+			border-radius: 50%;
+			border: 1px solid #7FDBFF;
+			color: #333;
+		}
+		.mfp-planner.booking .mfp-cue > i
+		{
+			border: none !important;
+		}
+		.mfp-planner.booking .mfp-cue::before
+		{
+			content: "?";
+			display: block;	
+			font-size: small;
+		}
+		.mfp-planner.booking .header-row
+		{
+			font-weight: bolder;
+			padding: 5px;
+		}
+		.mfp-planner.booking .data-row
+		{
+			background-color: #7FDBFF;
+			color: #fff;
+			padding: 5px;
+			border-radius: 5px;
+		}
+		.mfp-planner.booking .input-row
+		{
+			background-color: #FFDC00;
+			color: #001f3f;
+			padding: 5px;
+			border-radius: 5px;
+		}
+		.mfp-planner.booking .form-buttons
+		{
+			color: #fff;
+			font-size: x-large;
+			text-align: center;
+			margin-top: 20px !important;
+		}
+		.mfp-planner.booking .form-button-save
+		{
+			width: 80%;
+			padding: 10px;
+			background-color: #2ECC40 !important;
+		}
+		.mfp-planner.booking .form-button-cancel
+		{
+			width: 20%;
+			padding: 10px;
+			background-color: #FF4136 !important;
+		}
+		.mfp-planner.booking .cellClass0
+		{
+			background-color: #2ECC40 !important;
+		}
+		.mfp-planner.booking .cellClass1
+		{
+			background-color: #FFDC00 !important;
+		}
+		.mfp-planner.booking .cellClass2
+		{
+			background-color: #FF4136 !important;
+		}

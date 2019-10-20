@@ -1,4 +1,4 @@
-var enlocale = {
+export const locale = {
         "locale": "en-US",
         "date": {
             "dateFormats": {

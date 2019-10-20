@@ -1,0 +1,158 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>MindFusion JsPlanner Sample - Booking</title>
+	<link href="common/samples.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="themes/light.css" />
+    <style type="text/css">
+        .mfp-planner,
+        .mfp-popup {
+            font-size: larger;
+        }
+
+        .mfp-popup-header {
+            display: none;
+        }
+
+        .mfp-weekday {
+            background-color: #7FDBFF;
+            color: #fff;
+            font-size: xx-large;
+            padding: 20px 0;
+        }
+
+        .mfp-bg-cell {
+            padding: 10px;
+        }
+
+        .mfp-planner.light .mfp-bg-cell.mfp-selection {
+            background-color: #fff;
+        }
+
+        .mfp-bg-cell.mfp-selection .mfp-bg-cell-header {
+            border-radius: 15px;
+            color: #fff;
+            background-color: #7FDBFF;
+        }
+
+        .mfp-bg-cell.mfp-weekend-cell .mfp-bg-cell-header {
+            color: #FF4136;
+        }
+
+        .mfp-bg-cell.mfp-empty-cell {
+            border-right-color: transparent;
+        }
+
+        .mfp-cue {
+            background-color: #fff;
+            border-radius: 50%;
+            border: 1px solid #7FDBFF;
+            color: #333;
+        }
+
+            .mfp-cue > i {
+                border: none !important;
+            }
+
+            .mfp-cue::before {
+                content: "?";
+                display: block;
+                font-size: small;
+            }
+
+        .header-row {
+            font-weight: bolder;
+            padding: 5px;
+        }
+
+        .data-row {
+            background-color: #7FDBFF;
+            color: #fff;
+            padding: 5px;
+            border-radius: 5px;
+        }
+
+        .input-row {
+            background-color: #FFDC00;
+            color: #001f3f;
+            padding: 5px;
+            border-radius: 5px;
+        }
+
+        .form-buttons {
+            color: #fff;
+            font-size: x-large;
+            text-align: center;
+            margin-top: 20px !important;
+        }
+
+        .form-button-save {
+            width: 80%;
+            padding: 10px;
+            background-color: #2ECC40 !important;
+        }
+
+        .form-button-cancel {
+            width: 20%;
+            padding: 10px;
+            background-color: #FF4136 !important;
+        }
+
+        .cellClass0 {
+            background-color: #2ECC40 !important;
+        }
+
+        .cellClass1 {
+            background-color: #FFDC00 !important;
+        }
+
+        .cellClass2 {
+            background-color: #FF4136 !important;
+        }
+    </style>
+</head>
+<body>
+	<div id="header" style="height: 49px;">
+	<div style="float:left">
+	</div>
+		<div style="float: right; margin-right: 5px; margin-top: 17px;">
+			<a href="Booking.js" style="margin-right: 10px;">View source</a>
+			<button id="expandButton" onclick="onExpandCollapse()">
+				&gt;</button>
+		</div>
+	</div>
+	<div id="info" style="top: 60px; bottom: 24px;">
+		<div id="infoTab" style="padding: 10px;">
+			<h1>
+				About this sample</h1>
+			<p>
+                Create and edit reservations for the four rooms defined as locations for the schedule.
+                <br />
+                This sample presents a filtered MonthRange view. Only one appointment can be created
+                for a day period and location.
+                <br />
+                The calendar's appearance is customized by setting various properties
+                and additional css styles. 
+			</p>
+		</div>
+	</div>
+    <div id="content" style="top: 60px; bottom: 24px;">
+        <div style="width: 100%; height: 10px; padding: 10px; text-align: center; font-size: larger;">
+            Rooms&nbsp;<select id="locations"></select>
+        </div>
+        <div style="position: absolute; width: 100%; top:30px; bottom: 24px;">
+            <div style="position: absolute; width: 100%; height: 100%;">
+                <div id="calendar" style="height: 100%; width: 100%;">
+                </div>
+            </div>
+        </div>
+    </div>
+	<div id="footer" style="height: 24px;">
+		<span id="copyright"></span>
+	</div>
+	<script src="MindFusion.Scheduling.js" type="text/javascript"></script>
+	<script src="Booking.js" type="text/javascript"></script>
+    <script src="AppForm.js" type="text/javascript"></script>
+	<script type="text/javascript" src="common/samples.js"></script>
+</body>
+</html>

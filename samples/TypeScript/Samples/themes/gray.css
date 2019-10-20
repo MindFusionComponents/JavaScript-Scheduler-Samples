@@ -5,8 +5,6 @@
 {
     color: #fff;
     box-shadow: 4px 4px 4px rgba(0,0,0,0.35);
-    font-family: Verdana, Arial, Sans-Serif;
-    font-size: 8pt;
     background-color: #91b3bc;
     border-color: #333;
 }
@@ -78,6 +76,11 @@
 .mfp-popup.gray .mfp-popup-content .mfp-dropDown-list:focus
 {
    border: 1px solid #91b3bc;
+}
+.mfp-popup.gray .mfp-popup-content .mfp-date-box .mfp-dropdown-button, 
+.mfp-popup.gray .mfp-popup-content .mfp-time-box .mfp-dropdown-button
+{
+    background-image: url("icons/white/small.png");
 }
 .mfp-popup.gray .mfp-dtpicker
 {
@@ -238,17 +241,50 @@
     background-color: #4c4a48;
 }
 .mfp-planner.gray .mfp-item-vertical-detail .mfp-subject,
-.mfp-planner.gray .mfp-item-vertical-detail .mfp-details
+.mfp-planner.gray .mfp-item-vertical-detail .mfp-details,
+.mfp-planner.gray .mfp-item-vertical-detail .mfp-icons,
+.mfp-planner.gray .mfp-item-horizontal-detail .mfp-subject,
+.mfp-planner.gray .mfp-item-horizontal-detail .mfp-details,
+.mfp-planner.gray .mfp-item-horizontal-detail .mfp-icons
 {
     background-color: #4c4a48;
 }
 .mfp-planner.gray .mfp-item-vertical.mfp-selected .mfp-subject,
 .mfp-planner.gray .mfp-item-vertical.mfp-selected .mfp-details,
 .mfp-planner.gray .mfp-item-vertical-detail.mfp-selected .mfp-subject,
-.mfp-planner.gray .mfp-item-vertical-detail.mfp-selected .mfp-details
+.mfp-planner.gray .mfp-item-vertical-detail.mfp-selected .mfp-details,
+.mfp-planner.gray .mfp-item-vertical-detail.mfp-selected .mfp-icons,
+.mfp-planner.gray .mfp-item-horizontal-detail.mfp-selected .mfp-subject,
+.mfp-planner.gray .mfp-item-horizontal-detail.mfp-selected .mfp-details,
+.mfp-planner.gray .mfp-item-horizontal-detail.mfp-selected .mfp-icons
 {
     background-color: #fff; 
     color: #333;
+}
+.mfp-planner.gray .mfp-reminder .mfp-item .mfp-icons > span::after,
+.mfp-planner.gray .mfp-recurrence .mfp-item .mfp-icons > span::before,
+.mfp-planner.gray .mfp-exception .mfp-item .mfp-icons > span::before
+{
+    background-image: url("icons/white/small.png");
+}
+.mfp-planner.gray .mfp-selected.mfp-reminder .mfp-item .mfp-icons > span::after,
+.mfp-planner.gray .mfp-selected.mfp-recurrence .mfp-item .mfp-icons > span::before,
+.mfp-planner.gray .mfp-selected.mfp-exception .mfp-item .mfp-icons > span::before
+{
+    background-image: url("icons/black/small.png");
+}
+.mfp-planner.gray .mfp-item-horizontal .mfp-resize-start,
+.mfp-planner.gray .mfp-item-horizontal-detail .mfp-resize-start,
+.mfp-planner.gray .mfp-item-horizontal .mfp-resize-end,
+.mfp-planner.gray .mfp-item-horizontal-detail .mfp-resize-end,
+.mfp-planner.gray .mfp-item-vertical .mfp-resize-start,
+.mfp-planner.gray .mfp-item-vertical-detail .mfp-resize-start,
+.mfp-planner.gray .mfp-item-vertical .mfp-resize-end,
+.mfp-planner.gray .mfp-item-vertical-detail .mfp-resize-end
+{
+    background-color: #91b3bc;
+    border:none;
+    margin: 0;
 }/**
 * Vertical list view styles
 */

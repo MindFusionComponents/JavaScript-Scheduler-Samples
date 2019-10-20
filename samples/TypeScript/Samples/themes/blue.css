@@ -1,15 +1,11 @@
-.mfp-planner.blue
-{
-    font-family: Verdana, Arial, Sans-Serif;
-    font-size: 8pt;
-}
 .mfp-planner.blue .mfp-cue > i
 {
     border-color: #fff;
 }
 .mfp-planner.blue .mfp-selection
 {
-    background-color:#f7e1c5;
+    background-color:#eeaa7b;
+  /*  background-color:#f7e1c5;**/
 }
 /**
 * Popup forms styles
@@ -18,8 +14,6 @@
 {
     color: #495f77;
     box-shadow: 4px 4px 4px rgba(0,0,0,0.35);
-    font-family: Verdana, Arial, Sans-Serif;
-    font-size: 8pt;
     background-color: #fff;
     border: 2px solid #fff;
 }
@@ -45,7 +39,7 @@
 }
 .mfp-popup.blue a.mfp-button:hover
 {
-    background-color: #f7e1c5;
+    background-color: #eeaa7b;
 }
 .mfp-popup.blue .mfp-popup-content .mfp-text-area, 
 .mfp-popup.blue .mfp-popup-content .mfp-text-box, 
@@ -61,13 +55,7 @@
 .mfp-popup.blue .mfp-popup-content .mfp-date-box .mfp-dropdown-button, 
 .mfp-popup.blue .mfp-popup-content .mfp-time-box .mfp-dropdown-button
 {
-    display: inline-block;
-    cursor: pointer;
-    height: 23px;
-    margin: 0 !important;
-    text-decoration: none;
-    width: 22px;
-    vertical-align: middle;
+    background-image: url("icons/black/small.png");
 }
 .mfp-popup.blue .mfp-dtpicker
 {
@@ -76,7 +64,7 @@
 }
 .mfp-popup.blue .mfp-dtpicker .mfp-dtpicker-content td:hover
 {
-    background-color: #f7e1c5;
+    background-color: #eeaa7b;
     color: #495f77;
 }
 .mfp-popup.blue .mfp-popup-content .mfp-recurrence-info > .mfp-recurrence
@@ -90,7 +78,7 @@
 {
     display:block;
     padding:5px;
-    background-color: #f7e1c5;
+    background-color: #eeaa7b;
     color: #495f77;
 }
 .mfp-popup.mfp-popup-recurrence.blue .mfp-popup-content .mfp-pattern-details
@@ -127,6 +115,10 @@
 {
     border-right:1px solid #fff;
     border-bottom: 1px solid #fff;
+}
+.mfp-list-view.blue .mfp-content .mfp-wrap .mfp-bg-row .mfp-bg-cell
+{
+     border-right: 1px solid #fff;
 }
 .mfp-list-view.blue .mfp-content .mfp-wrap .mfp-bg-row .mfp-bg-cell .mfp-bg-cell-header,
 .mfp-list-view.blue .mfp-wrapper .mfp-content .mfp-wrap .mfp-item-table .mfp-cell-header
@@ -232,8 +224,18 @@
 {
     background-color: #495f77;
 }
-
-/**
+.mfp-planner.blue .mfp-reminder .mfp-item .mfp-icons > span::after,
+.mfp-planner.blue .mfp-recurrence .mfp-item .mfp-icons > span::before,
+.mfp-planner.blue .mfp-exception .mfp-item .mfp-icons > span::before
+{
+    background-image: url("icons/white/small.png");
+}
+.mfp-planner.blue .mfp-selected.mfp-reminder .mfp-item .mfp-icons > span::after,
+.mfp-planner.blue .mfp-selected.mfp-recurrence .mfp-item .mfp-icons > span::before,
+.mfp-planner.blue .mfp-selected.mfp-exception .mfp-item .mfp-icons > span::before
+{
+    background-image: url("icons/black/small.png");
+}/**
 * Vertical list view styles
 */
 .mfp-vertical-list-view.blue
@@ -333,7 +335,7 @@
 }
 .mfp-month-view.blue .mfp-content .mfp-wrap .mfp-bg-row .mfp-padding-cell.mfp-selection
 {
-    background-color: #f7e1c5;
+    background-color: #eeaa7b;
 }/**
 * Resource view styles
 */

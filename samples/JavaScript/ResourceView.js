@@ -1,7 +1,10 @@
+/// <reference path="MindFusion.Scheduling-vsdoc.js" /> 
+
 var p = MindFusion.Scheduling;
 
 // create a new instance of the calendar
 calendar = new p.Calendar(document.getElementById("calendar"));
+
 // set the view to ResourceView, which displays the distribution of resources over a period of time
 calendar.currentView = p.CalendarView.ResourceView;
 

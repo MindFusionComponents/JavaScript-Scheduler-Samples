@@ -1,7 +1,10 @@
+/// <reference path="MindFusion.Scheduling-vsdoc.js" /> 
+
 var p = MindFusion.Scheduling;
 
 // create a new instance of the calendar
 var calendar = new p.Calendar(document.getElementById("calendar"));
+
 // set the view to Timetable, which displays the allotment of resources to distinct hours of a day
 calendar.currentView = p.CalendarView.Timetable;
 

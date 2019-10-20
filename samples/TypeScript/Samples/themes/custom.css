@@ -34,7 +34,7 @@
 	padding:10px;
 	border-top: 1px solid #404040;
 }
-.mfp-popup.custom a.button
+.mfp-popup.custom a.mfp-button
 {
     width: 92px;
     height: 24px;
@@ -44,24 +44,24 @@
     border: solid 1px #747474;
     text-align: center;
 }
-.mfp-popup.custom a.button:hover
+.mfp-popup.custom a.mfp-button:hover
 {
     border: solid 1px #404040;
     background-color: #eee;
 }
-.mfp-popup.custom .mfp-popup-content .text-area, 
-.mfp-popup.custom .mfp-popup-content .dropDown-list
+.mfp-popup.custom .mfp-popup-content .mfp-text-area, 
+.mfp-popup.custom .mfp-popup-content .mfp-dropDown-list
 {
     border: 1px solid #747474;
     padding: 4px;
     color:#747474;
 }
-.mfp-popup.custom .mfp-popup-content .text-area:hover, 
-.mfp-popup.custom .mfp-popup-content .dropDown-list:hover
+.mfp-popup.custom .mfp-popup-content .mfp-text-area:hover, 
+.mfp-popup.custom .mfp-popup-content .mfp-dropDown-list:hover
 {
    border: solid 1px #404040;
 }
-.mfp-popup.custom .mfp-popup-content .hr-line
+.mfp-popup.custom .mfp-popup-content .mfp-hr-line
 {
     border-bottom: inset 1px #404040;
     margin: 0 0 8px 0;

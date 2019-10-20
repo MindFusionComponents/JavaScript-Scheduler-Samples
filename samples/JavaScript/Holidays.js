@@ -1,3 +1,5 @@
+/// <reference path="MindFusion.Scheduling-vsdoc.js" /> 
+
 var p = MindFusion.Scheduling;
 
 // create a new instance of the calendar 

@@ -18,13 +18,16 @@
     <IISExpressUseClassicPipelineMode />
   </PropertyGroup>
   <ItemGroup>
-    <Content Include="app.css" />
+    <Content Include="Interactions.html" />
+    <TypeScriptCompile Include="Interactions.ts" />
+    <Content Include="GardenCalendar.html" />
     <Content Include="common\samples.css" />
     <Content Include="common\samples.js" />
     <Content Include="DualView.html" />
     <Content Include="index.html" />
     <Content Include="Items.html" />
     <Content Include="ListView.html" />
+    <Content Include="Booking.html" />
     <Content Include="MinApp.html" />
     <Content Include="MindFusion.Scheduling.js" />
     <Content Include="MonthView.html" />
@@ -34,10 +37,8 @@
     <Content Include="themes\business.css" />
     <Content Include="themes\custom.css" />
     <Content Include="themes\first-theme.css" />
-    <Content Include="themes\forest.css" />
     <Content Include="themes\gray.css" />
     <Content Include="themes\green.css" />
-    <Content Include="themes\icons.png" />
     <Content Include="themes\light.css" />
     <Content Include="themes\peach.css" />
     <Content Include="themes\standard.css" />
@@ -47,11 +48,13 @@
     <Content Include="WeekView.html" />
   </ItemGroup>
   <ItemGroup>
-    <TypeScriptCompile Include="app.ts" />
+    <TypeScriptCompile Include="AppForm.ts" />
+    <TypeScriptCompile Include="GardenCalendar.ts" />
     <TypeScriptCompile Include="DualView.ts" />
     <TypeScriptCompile Include="Items.ts" />
     <TypeScriptCompile Include="jsplanner.d.ts" />
     <TypeScriptCompile Include="ListView.ts" />
+    <TypeScriptCompile Include="Booking.ts" />
     <TypeScriptCompile Include="MinApp.ts" />
     <TypeScriptCompile Include="MonthView.ts" />
     <TypeScriptCompile Include="Resources.ts" />
@@ -61,6 +64,10 @@
     <TypeScriptCompile Include="WeekView.ts" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="localization\bg.json" />
+    <Content Include="localization\de.json" />
+    <Content Include="localization\en.json" />
+    <Content Include="localization\ru.json" />
     <None Include="web.Debug.config">
       <DependentUpon>web.config</DependentUpon>
     </None>
@@ -97,6 +104,7 @@
   <PropertyGroup Condition="'$(Configuration)' == 'Debug'">
     <TypeScriptRemoveComments>false</TypeScriptRemoveComments>
     <TypeScriptSourceMap>true</TypeScriptSourceMap>
+    <TypeScriptModuleKind>umd</TypeScriptModuleKind>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)' == 'Release'">
     <TypeScriptRemoveComments>true</TypeScriptRemoveComments>

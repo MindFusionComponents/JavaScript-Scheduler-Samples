@@ -24,8 +24,6 @@
 {
     color: #444;
     box-shadow: 4px 4px 4px rgba(0,0,0,0.35);
-    font-family: Verdana, Arial, Sans-Serif;
-    font-size: 8pt;
     background: #fff;
     border: solid 1px #E2806C;
 }
@@ -39,10 +37,6 @@
 {
     opacity: 0.6;
     filter: alpha(opacity=60);
-}
-.mfp-popup.peach .mfp-popup-header a.mfp-close-button:before
-{
-    content: 'x';
 }
 .mfp-popup.peach .mfp-popup-header a.mfp-close-button:hover
 {
@@ -86,7 +80,6 @@
     box-sizing: border-box;
     padding: 4px;
     color:#444;
-    font-family: Verdana, Arial, Sans-Serif;
 }
 .mfp-popup.peach .mfp-popup-content .mfp-text-area:hover, 
 .mfp-popup.peach .mfp-popup-content .mfp-text-box:hover, 
@@ -122,13 +115,7 @@
 .mfp-popup.peach .mfp-popup-content .mfp-date-box .mfp-dropdown-button, 
 .mfp-popup.peach .mfp-popup-content .mfp-time-box .mfp-dropdown-button
 {
-    display: inline-block;
-    cursor: pointer;
-    height: 23px;
-    margin: 0 !important;
-    text-decoration: none;
-    width: 22px;
-    vertical-align: middle;
+    background-image: url("icons/color/small.png");
 }
 .mfp-popup.peach .mfp-dtpicker
 {
@@ -284,36 +271,13 @@
 {
     border-color: #fff;
 }
-/* .mfp-planner.peach .mfp-recurrence .mfp-icons > span::before
+.mfp-planner.peach .mfp-reminder .mfp-item .mfp-icons > span::after,
+.mfp-planner.peach .mfp-recurrence .mfp-item .mfp-icons > span::before,
+.mfp-planner.peach .mfp-exception .mfp-item .mfp-icons > span::before
 {
-    content: " ";
-    background-image: url(icons.png);
-    background-position: -50px -70px;
-    margin: 2px 1px;
-    height:13px;
-    width:15px;
-    display: block;	
+    background-image: url("icons/color/small.png");
 }
-.mfp-planner.peach .mfp-exception .mfp-icons > span::before
-{
-    content: " ";
-    background-image: url(icons.png);
-    background-position: -70px -70px;
-    margin: 2px 1px;
-    height:13px;
-    width:15px;
-    display: block;
-}
-.mfp-planner.peach .mfp-reminder .mfp-icons > span::after
-{
-    content: " ";
-    background-image: url(icons.png);
-    background-position: -330px -70px;
-    margin: 2px 1px;
-    height:13px;
-    width:15px;
-    display: block;
-} *//**
+/**
 * Vertical list view styles
 */
 .mfp-vertical-list-view.peach, 

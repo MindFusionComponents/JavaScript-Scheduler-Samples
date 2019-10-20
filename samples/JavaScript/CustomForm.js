@@ -21,7 +21,7 @@ CustomForm.prototype.drawContent = function ()
 	var content = this.getContent();
 
 	// create a text-area for the item subject
-	var control = this.createTextArea({ id: "subject", initValue: this.item.subject, events: { keydown: this._areaKeyDown} });
+	var control = this.createTextArea({ id: "subject", initValue: this.item.subject });
 	control.element.style.width = "200px";
 	this.addControl(control);
 
@@ -52,7 +52,7 @@ CustomForm.prototype.drawContent = function ()
 	content.appendChild(row);
 
 	var item = this.item;
-	control = this.createDropDownList({ id: "cssClass", items: this.colors, initValue: this.colors.find(c => c.text === item.cssClass).value,  addEmptyValue: false});
+		control = this.createDropDownList({ id: "cssClass", items: this.colors, initValue: this.colors.find(c => c.text === item.cssClass).value,  addEmptyValue: false});
 	control.element.style.width = "200px";
 	this.addControl(control);
 
@@ -124,10 +124,10 @@ CustomForm.prototype.onSaveButtonClick = function (e)
 
 	var rankIndex = +this.getControlValue("rank");
 	this.item.location = this.calendar.schedule.locations.items()[rankIndex];
-	
+
 	var colorIndex = +this.getControlValue("cssClass");
 	this.item.cssClass = this.colors.find(c => c.value === colorIndex).text;
-	
+
 	// if a new item is created, add it to the schedule.items collection
 	if (this.type === "new")
 		this.calendar.schedule.items.add(this.item);
