@@ -67,29 +67,32 @@
     </style>
 </head>
 <body>
-	<div id="header" style="height: 49px;">
-	<div style="float:left">
-	</div>
-		<div style="float: right; margin-right: 5px; margin-top: 17px;">
+    <div id="header" style="height: 59px;">
+        <div style="float: left; margin-left: 5px;">
+            <a href="index.html" style="margin-left: 10px;">Index</a>
+        </div>
+        <div style="float: right; margin-right: 5px;">
             <a href="GardenCalendar.js" style="margin-right: 10px;">View source</a>
-			<button id="expandButton" onclick="onExpandCollapse()">
-				&gt;</button>
-		</div>
-	</div>
-	<div id="info" style="top: 60px; bottom: 24px;">
-		<div id="infoTab" style="padding: 10px;">
-			<h1>
-				About this sample</h1>
-			<p>
+            <button id="expandButton" onclick="onExpandCollapse()">
+                &rsaquo;
+            </button>
+        </div>
+    </div>
+    <div id="info" style="top: 60px; bottom: 24px;">
+        <div id="infoTab" style="padding: 10px;">
+            <h1>
+                About this sample
+            </h1>
+            <p>
                 A 12-month garden calendar is presented in a horizontal list view, grouped by resources,
                 where each resource represents a different crop. Schedule items are created automatically
                 upon selection and are bound to the specified task.
                 <br />
                 The calendar's appearance is customized by setting various properties
-                and additional css styles. 
-			</p>
-		</div>
-	</div>
+                and additional css styles.
+            </p>
+        </div>
+    </div>
     <div id="content" style="top: 70px; bottom: 24px;">
         <div style="width: 100%; height: 30px; padding: 10px 0; text-align: center; font-size: larger;">
             Task&nbsp;<select id="tasks"></select>
@@ -111,11 +114,11 @@
             </div>
         </div>
     </div>
-	<div id="footer" style="height: 24px;">
-		<span id="copyright"></span>
-	</div>
-	<script src="MindFusion.Scheduling.js" type="text/javascript"></script>
+    <div id="footer" style="height: 24px;">
+        <span id="copyright"></span>
+    </div>
+    <script src="MindFusion.Scheduling.js" type="text/javascript"></script>
     <script src="GardenCalendar.js" type="text/javascript"></script>
-	<script type="text/javascript" src="common/samples.js"></script>
+    <script type="text/javascript" src="common/samples.js"></script>
 </body>
 </html>

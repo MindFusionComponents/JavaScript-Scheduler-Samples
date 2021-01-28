@@ -1,56 +1,61 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-	<title>MindFusion JsPlanner Sample - Holidays</title>
-	<link href="common/samples.css" rel="stylesheet" />
-	<link rel="stylesheet" type="text/css" href="themes/custom.css" />
-	<style type="text/css">
-		.mfp-planner .green .mfp-item
-		{
-			background-color: rgba(60, 179, 113, 0.5);
-		}
-		.mfp-planner .red .mfp-item
-		{
-			background-color: rgba(255, 99, 71, 0.5);
-		}
-		.mfp-planner .violet .mfp-item
-		{
-			background-color: rgba(106, 90, 205, 0.5);
-		}
-</style>
+    <title>MindFusion JsPlanner Sample - Holidays</title>
+    <link href="common/samples.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="themes/custom.css" />
+    <style type="text/css">
+        .mfp-planner .green .mfp-item
+        {
+            background-color: rgba(60, 179, 113, 0.5);
+        }
+        .mfp-planner .red .mfp-item
+        {
+            background-color: rgba(255, 99, 71, 0.5);
+        }
+        .mfp-planner .violet .mfp-item
+        {
+            background-color: rgba(106, 90, 205, 0.5);
+        }
+    </style>
 </head>
 <body>
-	<div id="header" style="height: 59px;">
-		<div style="float: right; margin-right: 5px; margin-top: 17px;">
-			<a href="Holidays.js" style="margin-right: 10px;">View source</a>
-			<button id="expandButton" onclick="onExpandCollapse()">
-				&gt;</button>
-		</div>
-	</div>
-	<div id="info" style="top: 70px; bottom: 24px;">
-		<div id="infoTab" style="padding: 10px;">
-			<h1>
-				About this sample</h1>
-			<p>
-				In this sample schedule data is fetched from a public api, which exposes Roman Catholic liturgical calendar 
-				celebrations for a specified month. It shows how to set-up and use a custom form to create and edit schedule items.
-				The calendar is styled by a custom user-defined theme.
-				<br />
-			</p>
-		</div>
-	</div>
-	<div id="content" style="top: 70px; bottom: 24px;">
-		<div style="position: absolute; width: 100%; height: 100%;">
-			<div id="calendar" style="height: 100%; width: 100%;">
-			</div>
-		</div>
-	</div>
-	<div id="footer" style="height: 24px;">
-		<span id="copyright"></span>
-	</div>
-	<script src="MindFusion.Scheduling.js" type="text/javascript"></script>
-	<script src="Holidays.js" type="text/javascript"></script>
-	<script src="CustomForm.js" type="text/javascript"></script>
-	<script type="text/javascript" src="common/samples.js"></script>
+    <div id="header" style="height: 59px;">
+        <div style="float: left; margin-left: 5px;">
+            <a href="index.html" style="margin-left: 10px;">Index</a>
+        </div>
+        <div style="float: right; margin-right: 5px;">
+            <a href="Holidays.js" style="margin-right: 10px;">View source</a>
+            <button id="expandButton" onclick="onExpandCollapse()">
+                &rsaquo;
+            </button>
+        </div>
+    </div>
+    <div id="info" style="top: 70px; bottom: 24px;">
+        <div id="infoTab" style="padding: 10px;">
+            <h1>
+                About this sample</h1>
+            <p>
+                In this sample schedule data is fetched from a public api, which exposes Roman Catholic
+                liturgical calendar celebrations for a specified month. It shows how to set-up and
+                use a custom form to create and edit schedule items. The calendar is styled by a
+                custom user-defined theme.
+                <br />
+            </p>
+        </div>
+    </div>
+    <div id="content" style="top: 70px; bottom: 24px;">
+        <div style="position: absolute; width: 100%; height: 100%;">
+            <div id="calendar" style="height: 100%; width: 100%;">
+            </div>
+        </div>
+    </div>
+    <div id="footer" style="height: 24px;">
+        <span id="copyright"></span>
+    </div>
+    <script src="MindFusion.Scheduling.js" type="text/javascript"></script>
+    <script src="Holidays.js" type="text/javascript"></script>
+    <script src="CustomForm.js" type="text/javascript"></script>
+    <script type="text/javascript" src="common/samples.js"></script>
 </body>
 </html>

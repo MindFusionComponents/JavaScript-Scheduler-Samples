@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Info, Foot } from './Info';
 import { ReactCalendar } from './Calendar';
 import p from 'scheduler-library';
 import './themes/earth.css';
@@ -54,17 +55,17 @@ class ListView extends Component {
         this.calProps = {
             theme: "earth",
             schedule:
-                {
-                    contacts: contacts,
-                    locations: locations
-                },
+            {
+                contacts: contacts,
+                locations: locations
+            },
             currentView: p.CalendarView.List,
             listSettings:
-                {
-                    orientation: p.Orientation.Horizontal,
-                    numberOfCells: 14,
-                    visibleCells: 7
-                },
+            {
+                orientation: p.Orientation.Horizontal,
+                numberOfCells: 14,
+                visibleCells: 7
+            },
             contactNameFormat: "L"
         }
     }
@@ -107,11 +108,11 @@ class ListView extends Component {
 
                 <div className="header">
 
-                    Orientation&nbsp;<select id="view" onChange={this.onOrientationChanged.bind(this)} defaultValue="0">
+                    Orientation<select id="view" onChange={this.onOrientationChanged.bind(this)} defaultValue="0">
                         <option value="0">Horizontal</option>
                         <option value="1">Vertical</option>
                     </select>
-                    Cell units&nbsp;<select id="headerStyle" onChange={this.onCellUnitsChanged.bind(this)} defaultValue="3">
+                    Cell units<select id="headerStyle" onChange={this.onCellUnitsChanged.bind(this)} defaultValue="3">
                         <option value="0">Second</option>
                         <option value="1">Minute</option>
                         <option value="2">Hour</option>
@@ -120,8 +121,8 @@ class ListView extends Component {
                         <option value="5">Month</option>
                         <option value="6">Year</option>
                     </select>
-                    Total cells&nbsp;<input id="totalCells" maxLength="2" size="2" defaultValue={this.calProps.listSettings.numberOfCells} onBlur={this.onTotalCellsChanged.bind(this)} />
-                    Visible cells&nbsp;<input id="visibleRows" maxLength="2" size="2" defaultValue={this.calProps.listSettings.visibleCells} onBlur={this.onVisibleCellsChanged.bind(this)} />
+                    Total cells<input id="totalCells" maxLength="2" size="2" defaultValue={this.calProps.listSettings.numberOfCells} onBlur={this.onTotalCellsChanged.bind(this)} />
+                    Visible cells<input id="visibleRows" maxLength="2" size="2" defaultValue={this.calProps.listSettings.visibleCells} onBlur={this.onVisibleCellsChanged.bind(this)} />
                     <button onClick={(e) => this.group(1, e)}>
                         Group by contacts</button>
                     <button onClick={(e) => this.group(3, e)}>
@@ -131,49 +132,25 @@ class ListView extends Component {
 
                 </div>
 
-                    <div className="container">
-                        <div className="main">
-                            <ReactCalendar {...this.calProps} ref={(ref) => this.reactCalendar = ref} />
-                        </div>
-                        <div className="sidebar">
-                            <h1>About this sample</h1>
-                            <p>This sample shows the capabilities of the List view.</p>
-                            <p>This view displays a number of cells, representing a single second, minute, hour,
-                        day, week, month or year time interval. The horizontal layout displays the time
-                        cells as columns, and the vertical layout - as rows. Additionaly it can be grouped
+                <div className="container">
+                    <div className="main">
+                        <ReactCalendar {...this.calProps} ref={(ref) => this.reactCalendar = ref} />
+                    </div>
+                    <div className="sidebar">
+                        <h1>About this sample</h1>
+                        <p>This sample shows the capabilities of the List view.</p>
+                        <p>This view displays a number of cells, representing a single second, minute, hour,
+                    day, week, month or year time interval. The horizontal layout displays the time
+                    cells as columns, and the vertical layout - as rows. Additionaly it can be grouped
                         by location, task, contact or resource.</p>
-                            <p>Use the ListViewSettings property of the Calendar class to
+                        <p>Use the ListViewSettings property of the Calendar class to
 				set the appearance of the list view.</p>
-                            <h1>About JsPlanner</h1>
-                            <p>JsPlanner is fully interactive scheduling control for the web, that can be used to present calendars and timetables to users and
-	let them edit the schedule information interactively. JsPlanner can display a schedule in several view types, such as:</p>
-                            <ul>
-                                <li>Single and multiple month views</li>
-                                <li>Single and multiple week views</li>
-                                <li>Horizontal and vertical lists of time intervals</li>
-                                <li>Horizontal and vertical timetables</li>
-                                <li>Resource view, displaying the distribution of resources over a period of time</li>
-                            </ul>
-                            <h2>Features</h2>
-                            <ul>
-                                <li>Several different view types</li>
-                                <li>Interactive item creation and modification</li>
-                                <li>Filtering and grouping</li>
-                                <li>Recurring events</li>
-                                <li>Localization support</li>
-                                <li>Themes</li>
-                                <li>XML and JSON schedule serialization</li>
-                            </ul>
-                            <p>JsPlanner is written 100% in JavaScript and can easily be integrated into any web application. It uses Flexible Box for layout.</p>
-                        </div>
+                        <Info />
                     </div>
-
-                    <div className="footer">
-                        <p>Copyright 2017-2019 MindFusion LLC.</p>
-                    </div>
-
                 </div>
-                );
+                <Foot />
+            </div>
+        );
     }
 }
 

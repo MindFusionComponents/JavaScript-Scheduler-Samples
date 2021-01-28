@@ -7,61 +7,50 @@
 </head>
 <body>
 	<div id="header" style="height: 59px;">
-		<div style="float: left;">
-
-			<div style="margin-top: 10px;">
-
-				Timelines&nbsp;<select id="timelines">
+		<div style="float: left; margin-left: 5px;">
+			<a href="index.html" style="margin-left: 10px;">Index</a> &nbsp;
+			Timelines&nbsp;<select id="timelines">
 				<option value="1">1</option>
 				<option value="2">2</option>
 				<option value="3">3</option>
-				</select>
-
-				Visible cells&nbsp;<input id="cells" maxlength="2" size="2"/>
-
-				Top timeline: unit&nbsp;<select id="ttunit">
+			</select>
+			Visible cells&nbsp;<input id="cells" maxlength="2" size="2" />
+			Top timeline: unit&nbsp;<select id="ttunit">
 				<option value="2">Hour</option>
 				<option value="3">Day</option>
 				<option value="4">Week</option>
 				<option value="5">Month</option>
 				<option value="6">Year</option>
-				</select>
-
-				 count&nbsp;<input id="ttcount" maxlength="2" size="2"/>
-
-				Middle timeline: unit&nbsp;<select id="mtunit">
+			</select>
+			count&nbsp;<input id="ttcount" maxlength="2" size="2" />
+			Middle timeline: unit&nbsp;<select id="mtunit">
 				<option value="2">Hour</option>
 				<option value="3">Day</option>
 				<option value="4">Week</option>
 				<option value="5">Month</option>
 				<option value="6">Year</option>
-				</select>
-
-				 count&nbsp;<input id="mtcount" maxlength="2" size="2"/>
-
-				
-				Bottom timeline: unit&nbsp;<select id="btunit">
+			</select>
+			count&nbsp;<input id="mtcount" maxlength="2" size="2" />
+			Bottom timeline: unit&nbsp;<select id="btunit">
 				<option value="2">Hour</option>
 				<option value="3">Day</option>
 				<option value="4">Week</option>
 				<option value="5">Month</option>
 				<option value="6">Year</option>
-				</select>
-
-				 count&nbsp;<input id="btcount" maxlength="2" size="2"/>
-
-				<button onclick="ResourceView.group(1)">
-					Group by contacts</button>
-				<button onclick="ResourceView.group(3)">
-					Group by locations</button>
-
-		
-			</div>
+			</select>
+			count&nbsp;<input id="btcount" maxlength="2" size="2" />
+			<button onclick="ResourceView.group(1)">
+				Group by contacts
+			</button>
+			<button onclick="ResourceView.group(3)">
+				Group by locations
+			</button>
 		</div>
-		<div style="float: right; margin-right: 5px; margin-top: 17px;">
+		<div style="float: right; margin-right: 5px;">
 			<a href="ResourceView.js" style="margin-right: 10px;">View source</a>
 			<button id="expandButton" onclick="onExpandCollapse()">
-				&gt;</button>
+				&rsaquo;
+			</button>
 		</div>
 	</div>
 	<div id="info" style="top: 70px; bottom: 24px;">

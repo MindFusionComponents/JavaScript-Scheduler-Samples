@@ -7,26 +7,29 @@
 </head>
 <body>
 	<div id="header" style="height: 59px;">
-		<div style="float: left;">
-			Timetable filtered for contact&nbsp;<select id="contacts" onchange="DualView.filter()">
+		<div style="float: left; margin-left: 5px;">
+			<a href="index.html" style="margin-left: 10px;">Index</a> &nbsp; Timetable filtered
+			for contact&nbsp;<select id="contacts" onchange="filter()">
 			</select>
 		</div>
-		<div style="float: right; margin-right: 5px; margin-top: 17px;">
+		<div style="float: right; margin-right: 5px;">
 			<a href="DualView.js" style="margin-right: 10px;">View source</a>
 			<button id="expandButton" onclick="onExpandCollapse()">
-				&gt;</button>
+				&rsaquo;
+			</button>
 		</div>
 	</div>
 	<div id="info" style="top: 70px; bottom: 24px;">
 		<div id="infoTab" style="padding: 10px;">
 			<h1>
-				About this sample</h1>
+				About this sample
+			</h1>
 			<p>
 				This sample shows how to present a single schedule instance in two different calendar
 				controls.
 				<br />
 				Create items in the timetable to the left, and they will appear in the other calendar
-				simultaneously. The timetable is filtered and displays only items for a specified contact 
+				simultaneously. The timetable is filtered and displays only items for a specified contact
 				and the week view displays all items in the schedule.
 				Items longer than one day will be shown only in the week calendar.
 				Items can be modified interactively by dragging and resizing in both calendar controls, while the built-in

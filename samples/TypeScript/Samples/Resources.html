@@ -6,42 +6,54 @@
 	<link rel="stylesheet" type="text/css" href="themes/light.css" />
 </head>
 <body>
-	<div id="header" style="height: 59px;">
-		<div style="float: left;">
+	<div id="header" style="height: 89px;">
+		<div style="float: left; margin-left: 5px;">
+			<a href="index.html" style="margin-left: 10px;">Index</a> &nbsp;
 			<button onclick="Resources.changeView(3)">
-				Horizontal List</button>
+				Horizontal List
+			</button>
 			<button onclick="Resources.changeView(-1)">
-				Vertical List</button>
+				Vertical List
+			</button>
 			<button onclick="Resources.changeView(4)">
-				Timetable</button>
+				Timetable
+			</button>
 			<button onclick="Resources.changeView(5)">
-				Resource</button>
+				Resource
+			</button>
 			<div style="margin-top: 10px;">
 				<button onclick="Resources.group(1)">
-					Group by contacts</button>
+					Group by contacts
+				</button>
 				<button onclick="Resources.group(3)">
-					Group by locations</button>
+					Group by locations
+				</button>
 				<button onclick="Resources.group(0)">
-					Clear grouping</button>
+					Clear grouping
+				</button>
 				Contacts&nbsp;<select id="contacts">
 				</select>
 				<button onclick="Resources.filter(5)">
-					Filter by contact</button>
+					Filter by contact
+				</button>
 				Locations&nbsp;<select id="locations">
 				</select>
 				<button onclick="Resources.filter(6)">
-					Filter by location</button>
+					Filter by location
+				</button>
 				<button onclick="Resources.filter(0)">
-					Clear filter</button>
+					Clear filter
+				</button>
 			</div>
 		</div>
-		<div style="float: right; margin-right: 5px; margin-top: 17px;">
+		<div style="float: right; margin-right: 5px;">
 			<a href="Resources.js" style="margin-right: 10px;">View source</a>
 			<button id="expandButton" onclick="onExpandCollapse()">
-				&gt;</button>
+				&rsaquo;
+			</button>
 		</div>
 	</div>
-	<div id="info" style="top: 70px; bottom: 24px;">
+	<div id="info" style="top: 100px; bottom: 24px;">
 		<div id="infoTab" style="padding: 10px;">
 			<h1>
 				About this sample</h1>
@@ -54,7 +66,7 @@ Grouping the calendar creates separate rows or columns for each resource and can
 			</p>
 		</div>
 	</div>
-	<div id="content" style="top: 70px; bottom: 24px;">
+	<div id="content" style="top: 100px; bottom: 24px;">
 		<div style="position: absolute; width: 100%; height: 100%;">
 			<div id="calendar" style="height: 100%; width: 100%;">
 			</div>

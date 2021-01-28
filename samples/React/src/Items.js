@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Info, Foot } from './Info';
 import { ReactCalendar } from './Calendar';
 import p from 'scheduler-library';
 import './themes/light.css';
@@ -87,7 +88,6 @@ class Items extends Component {
         this.calProps = {
             theme: "light",
             currentView: p.CalendarView.SingleMonth,
-            loadEvent: this.handleLoad,
             schedule:
             {
                 contacts: contacts,
@@ -177,8 +177,8 @@ class Items extends Component {
                         Week Range</button>
                     <button onClick={(e) => this.changeView(4, e)}>
                         Timetable</button>
-                    Items size&nbsp;<input id="size" maxLength="2" size="3" defaultValue={this.calProps.itemSettings.size} onBlur={this.onSizeChanged.bind(this)} />
-                    Items spacing&nbsp;<input id="spacing" maxLength="2" size="3" defaultValue={this.calProps.itemSettings.spacing} onBlur={this.onSpacingChanged.bind(this)} />
+                    Items size<input id="size" maxLength="2" size="3" defaultValue={this.calProps.itemSettings.size} onBlur={this.onSizeChanged.bind(this)} />
+                    Items spacing<input id="spacing" maxLength="2" size="3" defaultValue={this.calProps.itemSettings.spacing} onBlur={this.onSpacingChanged.bind(this)} />
                     <select id="itemClass" onChange={this.onClassChanged.bind(this)}>
                         <option></option>
                         <option>itemClass1</option>
@@ -194,7 +194,9 @@ class Items extends Component {
 
                 <div className="container">
                     <div className="main">
-                        <ReactCalendar {...this.calProps} ref={(ref) => this.reactCalendar = ref} />
+                        <ReactCalendar {...this.calProps} 
+                        calendarLoad={this.handleLoad}
+                        ref={(ref) => this.reactCalendar = ref} />
                     </div>
                     <div className="sidebar">
                         <h1>About this sample</h1>
@@ -208,34 +210,10 @@ class Items extends Component {
                         to individual items.
                         </p><p>
                             JSplanner offers out-of-the-box interactive creating, modifying and deleting of calendar items by using the built-in popup forms. </p>
-                        <h1>About JsPlanner</h1>
-                        <p>JsPlanner is fully interactive scheduling control for the web, that can be used to present calendars and timetables to users and
-	let them edit the schedule information interactively. JsPlanner can display a schedule in several view types, such as:</p>
-                        <ul>
-                            <li>Single and multiple month views</li>
-                            <li>Single and multiple week views</li>
-                            <li>Horizontal and vertical lists of time intervals</li>
-                            <li>Horizontal and vertical timetables</li>
-                            <li>Resource view, displaying the distribution of resources over a period of time</li>
-                        </ul>
-                        <h2>Features</h2>
-                        <ul>
-                            <li>Several different view types</li>
-                            <li>Interactive item creation and modification</li>
-                            <li>Filtering and grouping</li>
-                            <li>Recurring events</li>
-                            <li>Localization support</li>
-                            <li>Themes</li>
-                            <li>XML and JSON schedule serialization</li>
-                        </ul>
-                        <p>JsPlanner is written 100% in JavaScript and can easily be integrated into any web application. It uses Flexible Box for layout.</p>
+                        <Info />
                     </div>
                 </div>
-
-                <div className="footer">
-                    <p>Copyright 2017-2019 MindFusion LLC.</p>
-                </div>
-
+                <Foot />
             </div>
         );
     }

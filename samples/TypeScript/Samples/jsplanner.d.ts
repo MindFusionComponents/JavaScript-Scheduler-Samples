@@ -1,8 +1,8 @@
 // Type definitions for MindFusion.Scheduling for JavaScript
-// Project: http://www.mindfusion.eu/javascript-scheduler.html
-// Definitions by: MindFusion <http://www.mindfusion.eu>
+// Project: https://www.mindfusion.eu/javascript-scheduler.html
+// Definitions by: MindFusion <https://www.mindfusion.eu>
 
-// Copyright (c) 2018-2019, MindFusion LLC - Bulgaria.
+// Copyright (c) 2018-2020, MindFusion LLC - Bulgaria.
 
 declare module "scheduler-library"
 {
@@ -1075,6 +1075,25 @@ declare namespace MindFusion.Scheduling
 		name: string;
 		/** Gets or sets custom data associated with the resource. */
 		tag: any;
+		/** Saves the resource content into an XML element.
+		 * @param element An XML DOM element that will contain the resource's data.
+		 * @param context An object providing contextual information about the serialization process and some helper serialization methods.
+		*/
+		saveToXml(element: Element, context: XmlPersistContext): void;
+		/** Loads the resource content from an XML element.
+		 * @param element An XML DOM element that contains the resource's serialized content.
+		 * @param context An object providing contextual information about the serialization process and some helper serialization methods.
+		*/
+		loadFromXml(element: Element, context: XmlPersistContext): void;
+		/** Serializes this resource into a JSON string.
+		 * @param context The serialization context.
+		*/
+		toJson(context: JsonPersistContext): string;
+		/** Deserializes this resource from a JSON string.
+		 * @param json A string created by the toJson method.
+		 * @param context The serialization context.
+		*/
+		fromJson(json: string, context: JsonPersistContext): void;
 	}
 	/** Represents an object that holds contact data for a person. */
 	class Contact extends Resource
@@ -1211,6 +1230,25 @@ declare namespace MindFusion.Scheduling
 		tag: any;
 		/** Creates an exact copy of this item. */
 		clone(): Item;
+		/** Saves the item content into an XML element.
+		 * @param element An XML DOM element that will contain the item's data.
+		 * @param context An object providing contextual information about the serialization process and some helper serialization methods.
+		*/
+		saveToXml(element: Element, context: XmlPersistContext): void;
+		/** Loads the item content from an XML element.
+		 * @param element An XML DOM element that contains the item's serialized content.
+		 * @param context An object providing contextual information about the serialization process and some helper serialization methods.
+		*/
+		loadFromXml(element: Element, context: XmlPersistContext): void;
+		/** Serializes this item into a JSON string.
+		 * @param context The serialization context.
+		*/
+		toJson(context: JsonPersistContext): string;
+		/** Deserializes this item from a JSON string.
+		 * @param json A string created by the toJson method.
+		 * @param context The serialization context.
+		*/
+		fromJson(json: string, context: JsonPersistContext): void;
 	}
 	/** Defines recurrence patterns for items scheduled to repeat over and over again. */
 	class Recurrence
@@ -1579,7 +1617,7 @@ declare namespace MindFusion.Scheduling
 		fromXmlDocument(document: Document): void;
 		/** Serializes the schedule into a JSON string. */
 		toJson(): string;
-		/** Deserializes the diagram from a JSON string.
+		/** Deserializes the schedule from a JSON string.
 		 * @param json A string created by the toJson method.
 		*/
 		fromJson(json: string): void;
@@ -1595,6 +1633,13 @@ declare namespace MindFusion.Scheduling
 		itemsChanged: EventDispatcher;
 		/** Raised when the schedule is changed. */
 		changed: EventDispatcher;
+		/** Registers a schedule item or resource class for serialization support.
+		 * @param itemClass An object identifying the class.
+		 * @param xmlClassId A class identifier to use when saving and loading objects of the specified type to and from XML.
+		 * @param jsonClassId A class identifier to use when saving and loading objects of the specified type to and from JSON.
+		 * @param classVersion A revision number of the objects's class serialization format.
+		*/
+		static registerClass(itemClass: any, xmlClassId: string, jsonClassId: string, classVersion: number): void;
 	}
 	/** The Calendar control serves as a view in document-view architecture, where the document is implemented by the Schedule class */
 	class Calendar
@@ -1625,6 +1670,8 @@ declare namespace MindFusion.Scheduling
 		 * @param full True to recreate calendar items, otherwise false.
 		*/
 		repaint(full?: boolean): void;
+		/** Recalculates calendar's dimensions */
+		adjust(): void;
 		/** Gets the actual group type */
 		realGroupType: GroupType;
 		/** Gets or sets the date of the calendar. */
@@ -1761,6 +1808,8 @@ declare namespace MindFusion.Scheduling
 		itemClick: EventDispatcher;
 		/** Raised when an item is double-clicked. */
 		itemDoubleClick: EventDispatcher;
+		/** Raised when an item is drawn. */
+		itemDraw: EventDispatcher;
 		/** Raised when a popup form is shown. */
 		formShow: EventDispatcher;
 		/** Raised when a popup form is closed. */
@@ -1948,5 +1997,81 @@ declare namespace MindFusion.Scheduling
 		newDate: DateTime;
 		/** Gets the previous visible date. */
 		prevDate: DateTime;
+	}
+	/** Provides methods that read/write schedule data to and from XML. */
+	class XmlPersistContext
+	{
+		/** Writes a string value with the specified name.
+		 * @param stringValue The string that should be saved in current XML document.
+		 * @param elementName A string specifying the name of the new element.
+		 * @param parentElement The parent DOM Element object.
+		*/
+		writeString(stringValue: string, elementName: string, parentElement: Element): Element;
+		/** Reads a string value with the specified name.
+		 * @param elementName The name of the string's XML element.
+		 * @param parentElement The parent DOM Element object.
+		 * @param defaultValue The default string to return if specified child XML element does not exist.
+		*/
+		readString(elementName: string, parentElement: Element, defaultValue?: string): string;
+		/** Writes a floating-point number with the specified name.
+		 * @param floatValue The number that should be saved in current XML document.
+		 * @param elementName A string specifying the name of the new element.
+		 * @param parentElement The parent DOM Element object.
+		*/
+		writeFloat(floatValue: number, elementName: string, parentElement: Element): Element;
+		/** Reads a floating-point number with the specified name.
+		 * @param elementName A string specifying the name of the number XML element.
+		 * @param parentElement The parent DOM Element object.
+		 * @param defaultValue The default number to return if specified child XML element does not exist.
+		*/
+		readFloat(elementName: string, parentElement: Element, defaultValue?: number): number;
+		/** Writes a Boolean value with the specified name.
+		 * @param boolValue The Boolean value that should be saved in current XML document.
+		 * @param elementName A string specifying the name of the new element.
+		 * @param parentElement The parent DOM Element object.
+		*/
+		writeBool(boolValue: boolean, elementName: string, parentElement: Element): Element;
+		/** Reads a  Boolean value with the specified name.
+		 * @param elementName A string specifying the name of the Boolean XML element.
+		 * @param parentElement The parent DOM Element object.
+		 * @param defaultValue The default value to return if specified child XML element does not exist.
+		*/
+		readBool(elementName: string, parentElement: Element, defaultValue?: boolean): number;
+		/** Writes an integer number with the specified name.
+		 * @param intValue The number that should be saved in current XML document.
+		 * @param elementName A string specifying the name of the new element.
+		 * @param parentElement The parent DOM Element object.
+		*/
+		writeInt(intValue: number, elementName: string, parentElement: Element): Element;
+		/** Reads an integer number with the specified name.
+		 * @param elementName A string specifying the name of the number XML element.
+		 * @param parentElement The parent DOM Element object.
+		 * @param defaultValue The default number to return if specified child XML element does not exist.
+		*/
+		readInt(elementName: string, parentElement: Element, defaultValue?: number): number;
+		/** Writes a DateTime value with the specified name.
+		 * @param dateTimeValue The DateTime value that should be saved in current XML document.
+		 * @param elementName A string specifying the name of the new element.
+		 * @param parentElement The parent DOM Element object.
+		*/
+		writeDateTime(dateTimeValue: DateTime, elementName: string, parentElement: Element): Element;
+		/** Reads a DateTime value with the specified name.
+		 * @param elementName A string specifying the name of the number XML element.
+		 * @param parentElement The parent DOM Element object.
+		 * @param defaultValue The default DateTime value to return if specified child XML element does not exist.
+		*/
+		readDateTime(elementName: string, parentElement: Element, defaultValue?: DateTime): DateTime;
+	}
+	/** Provides methods that read/write schedule data to and from JSON. */
+	class JsonPersistContext
+	{
+		/** Writes a DateTime value.
+		 * @param value The DateTime value that should be saved.
+		*/
+		writeDateTime(value: DateTime): string;
+		/** Reads a DateTime value.
+		 * @param value A string representing the DateTime.
+		*/
+		readDateTime(value: string): DateTime;
 	}
 }

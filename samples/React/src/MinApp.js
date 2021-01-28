@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Info, Foot } from './Info';
 import { ReactCalendar } from './Calendar';
 import p from 'scheduler-library';
 import './themes/blue.css';
@@ -11,9 +12,9 @@ import './themes/peach.css';
 import './themes/standard.css';
 import './themes/pastel.css';
 
-import {locale as en} from 'scheduler-library/localization/en';
-import {locale as de} from 'scheduler-library/localization/de';
-import {locale as ru} from 'scheduler-library/localization/ru';
+import { locale as en } from 'scheduler-library/localization/en';
+import { locale as de } from 'scheduler-library/localization/de';
+import { locale as ru } from 'scheduler-library/localization/ru';
 
 class MinApp extends Component {
   constructor(props) {
@@ -49,13 +50,12 @@ class MinApp extends Component {
 
   onLocaleChanged(e) {
     var l;
-    switch (e.target.value)
-    {
-      case "de" :  l = de; break;
-      case "ru" :  l = ru; break;
-      default :  l = en; break;
+    switch (e.target.value) {
+      case "de": l = de; break;
+      case "ru": l = ru; break;
+      default: l = en; break;
     }
-    this.reactCalendar.setState({ locale: l});
+    this.reactCalendar.setState({ locale: l });
   }
 
   render() {
@@ -95,34 +95,10 @@ class MinApp extends Component {
           <div className="sidebar">
             <h1>About this sample</h1>
             <p>A sample program that shows everything needed to embed MindFusion.Scheduling in	a web page.</p>
-            <h1>About JsPlanner</h1>
-            <p>JsPlanner is fully interactive scheduling control for the web, that can be used to present calendars and timetables to users and
-	let them edit the schedule information interactively. JsPlanner can display a schedule in several view types, such as:</p>
-            <ul>
-              <li>Single and multiple month views</li>
-              <li>Single and multiple week views</li>
-              <li>Horizontal and vertical lists of time intervals</li>
-              <li>Horizontal and vertical timetables</li>
-              <li>Resource view, displaying the distribution of resources over a period of time</li>
-            </ul>
-            <h2>Features</h2>
-            <ul>
-              <li>Several different view types</li>
-              <li>Interactive item creation and modification</li>
-              <li>Filtering and grouping</li>
-              <li>Recurring events</li>
-              <li>Localization support</li>
-              <li>Themes</li>
-              <li>XML and JSON schedule serialization</li>
-            </ul>
-            <p>JsPlanner is written 100% in JavaScript and can easily be integrated into any web application. It uses Flexible Box for layout.</p>
+            <Info />
           </div>
         </div>
-
-        <div className="footer">
-          <p>Copyright 2017-2019 MindFusion LLC.</p>
-        </div>
-
+        <Foot />
       </div>
     );
   }

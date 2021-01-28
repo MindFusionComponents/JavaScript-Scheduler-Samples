@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
+import { Info, Foot } from './Info';
 import { ReactCalendar } from './Calendar';
 import p from 'scheduler-library';
 import './themes/light.css';
-
 
 class Resources extends Component {
     constructor(props) {
@@ -56,10 +56,10 @@ class Resources extends Component {
             theme: "light",
             currentView: p.CalendarView.Timetable,
             schedule:
-                {
-                    contacts: contacts,
-                    locations: locations
-                }
+            {
+                contacts: contacts,
+                locations: locations
+            }
         }
 
         this.contactsData = [];
@@ -138,12 +138,12 @@ class Resources extends Component {
                         Group by locations</button>
                     <button onClick={(e) => this.group(0, e)}>
                         Clear grouping</button>
-                    Contacts&nbsp;<select id="contacts"> {this.contactsData.map(x => <option key={x.key} value={x.key}>{x.value}</option>)}
+                    Contacts<select id="contacts"> {this.contactsData.map(x => <option key={x.key} value={x.key}>{x.value}</option>)}
 
                     </select>
                     <button onClick={(e) => this.filter(5, e)}>
                         Filter by contact</button>
-                    Locations&nbsp;<select id="locations">{this.locationsData.map(x => <option key={x.key} value={x.key}>{x.value}</option>)}
+                    Locations<select id="locations">{this.locationsData.map(x => <option key={x.key} value={x.key}>{x.value}</option>)}
                     </select>
                     <button onClick={(e) => this.filter(6, e)}>
                         Filter by location</button>
@@ -162,34 +162,10 @@ class Resources extends Component {
                 the FilterBy* values. Select a contact or location from one of the drop-down lists below in order to display the matching appointments.</p>
                         <p>Grouping the calendar creates separate rows or columns for each resource and can be enabled by setting the GroupType property to one of the GroupBy* values.
                  Note that the Resource view is designed to only display content when grouping is enabled. </p>
-                        <h1>About JsPlanner</h1>
-                        <p>JsPlanner is fully interactive scheduling control for the web, that can be used to present calendars and timetables to users and
-	let them edit the schedule information interactively. JsPlanner can display a schedule in several view types, such as:</p>
-                        <ul>
-                            <li>Single and multiple month views</li>
-                            <li>Single and multiple week views</li>
-                            <li>Horizontal and vertical lists of time intervals</li>
-                            <li>Horizontal and vertical timetables</li>
-                            <li>Resource view, displaying the distribution of resources over a period of time</li>
-                        </ul>
-                        <h2>Features</h2>
-                        <ul>
-                            <li>Several different view types</li>
-                            <li>Interactive item creation and modification</li>
-                            <li>Filtering and grouping</li>
-                            <li>Recurring events</li>
-                            <li>Localization support</li>
-                            <li>Themes</li>
-                            <li>XML and JSON schedule serialization</li>
-                        </ul>
-                        <p>JsPlanner is written 100% in JavaScript and can easily be integrated into any web application. It uses Flexible Box for layout.</p>
+                        <Info />
                     </div>
                 </div>
-
-                <div className="footer">
-                    <p>Copyright 2017-2019 MindFusion LLC.</p>
-                </div>
-
+                <Foot />
             </div>
         );
     }

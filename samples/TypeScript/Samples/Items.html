@@ -27,35 +27,45 @@
 </head>
 <body>
 	<div id="header" style="height: 59px;">
-		<div style="float: left;">
+		<div style="float: left; margin-left: 5px;">
+			<a href="index.html" style="margin-left: 10px;">Index</a> &nbsp;
 			<button onclick="Items.changeView(1)">
-				Single Month</button>
+				Single Month
+			</button>
 			<button onclick="Items.changeView(0)">
-				MonthRange</button>
+				MonthRange
+			</button>
 			<button onclick="Items.changeView(3)">
-				List</button>
+				List
+			</button>
 			<button onclick="Items.changeView(2)">
-				Week Range</button>
+				Week Range
+			</button>
 			<button onclick="Items.changeView(4)">
-				Timetable</button>
-			Items size&nbsp;<input id="size" maxlength="2" size="3"/>
-			Items spacing&nbsp;<input id="spacing" maxlength="2" size="3"/>
+				Timetable
+			</button>
+			Items size&nbsp;<input id="size" maxlength="2" size="3" />
+			Items spacing&nbsp;<input id="spacing" maxlength="2" size="3" />
 			<select id="itemClass">
 				<option></option>
 				<option>itemClass1</option>
 				<option>itemClass2</option>
 			</select>
 			<button onclick="Items.clearItems()">
-				Clear items</button>
+				Clear items
+			</button>
 			<button onclick="Items.toXml()">
-				Save to Xml</button>
+				Save to Xml
+			</button>
 			<button onclick="Items.fromXml()">
-				Load from Xml</button>
+				Load from Xml
+			</button>
 		</div>
-		<div style="float: right; margin-right: 5px; margin-top: 17px;">
+		<div style="float: right; margin-right: 5px;">
 			<a href="Items.js" style="margin-right: 10px;">View source</a>
 			<button id="expandButton" onclick="onExpandCollapse()">
-				&gt;</button>
+				&rsaquo;
+			</button>
 		</div>
 	</div>
 	<div id="info" style="top: 70px; bottom: 24px;">

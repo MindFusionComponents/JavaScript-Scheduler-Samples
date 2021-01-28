@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Info, Foot } from './Info';
 import { ReactCalendar } from './Calendar';
 import p from 'scheduler-library';
 import './themes/light.css';
@@ -132,7 +133,7 @@ class Booking extends Component {
       <div className="App">
 
         <div className="header">
-          Rooms&nbsp;<select id="locations" onChange={this.onRoomChanged.bind(this)}>{this.locationsData.map(x => <option key={x.key} value={x.key}>{x.value}</option>)}
+          Rooms<select id="locations" onChange={this.onRoomChanged.bind(this)}>{this.locationsData.map(x => <option key={x.key} value={x.key}>{x.value}</option>)}
           </select>
         </div>
 
@@ -151,34 +152,10 @@ class Booking extends Component {
               The calendar's appearance is customized by setting various properties
               and additional css styles.
             </p>
-            <h1>About JsPlanner</h1>
-            <p>JsPlanner is fully interactive scheduling control for the web, that can be used to present calendars and timetables to users and
-	let them edit the schedule information interactively. JsPlanner can display a schedule in several view types, such as:</p>
-            <ul>
-              <li>Single and multiple month views</li>
-              <li>Single and multiple week views</li>
-              <li>Horizontal and vertical lists of time intervals</li>
-              <li>Horizontal and vertical timetables</li>
-              <li>Resource view, displaying the distribution of resources over a period of time</li>
-            </ul>
-            <h2>Features</h2>
-            <ul>
-              <li>Several different view types</li>
-              <li>Interactive item creation and modification</li>
-              <li>Filtering and grouping</li>
-              <li>Recurring events</li>
-              <li>Localization support</li>
-              <li>Themes</li>
-              <li>XML and JSON schedule serialization</li>
-            </ul>
-            <p>JsPlanner is written 100% in JavaScript and can easily be integrated into any web application. It uses Flexible Box for layout.</p>
+            <Info />
           </div>
         </div>
-
-        <div className="footer">
-          <p>Copyright 2017-2019 MindFusion LLC.</p>
-        </div>
-
+        <Foot />
       </div>
     );
   }

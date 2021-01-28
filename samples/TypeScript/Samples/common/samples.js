@@ -24,14 +24,21 @@ var jsPlannerInfo =
 	'JsPlanner is written 100% in JavaScript and can easily be integrated into any web application. '+
 	'It uses Flexible Box for layout.</p>';
 
-if (document.getElementById('copyright'))
-document.getElementById('copyright').innerHTML = "&copy; " + new Date().getFullYear() + " MindFusion";
+document.addEventListener("DOMContentLoaded", function ()
+{
+	if (document.getElementById('copyright'))
+	{
+		document.getElementById('copyright').innerHTML = "&copy; " + new Date().getFullYear() + " MindFusion";
+	}
 
-var e = document.createElement('div');
-e.innerHTML = jsPlannerInfo;
+	var e = document.createElement('div');
+	e.innerHTML = jsPlannerInfo;
 
-if (document.getElementById('infoTab'))
-document.getElementById('infoTab').appendChild(e);
+	if (document.getElementById('infoTab'))
+	{
+		document.getElementById('infoTab').appendChild(e);
+	}
+});
 
 var collapsed = false;
 function onExpandCollapse()
@@ -40,14 +47,14 @@ function onExpandCollapse()
 	{
 		document.getElementById('info').style.width = '400px';
 		document.getElementById('content').style.right = '401px';
-		document.getElementById('expandButton').innerHTML = ">";
+		document.getElementById('expandButton').innerHTML = "&rsaquo;";
 		collapsed = false;
 	}
 	else
 	{
 		document.getElementById('info').style.width = '0px';
 		document.getElementById('content').style.right = '0px';
-		document.getElementById('expandButton').innerHTML = "<";
+		document.getElementById('expandButton').innerHTML = "&lsaquo;";
 		collapsed = true;
 	}
 }

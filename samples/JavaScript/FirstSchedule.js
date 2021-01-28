@@ -13,6 +13,8 @@ calendar.monthSettings.maxItems = 3;
 
 calendar.theme = "first-theme";
 
+calendar.date = p.DateTime.fromDateParts(2020, 1, 1);
+
 //visualize the calendar
 calendar.render();
 

@@ -94,3 +94,26 @@ hr
 	background-image: -ms-linear-gradient(left, rgba(226,228,231,0), rgba(226,228,231,1), rgba(226,228,231,0));
 	background-image: -o-linear-gradient(left, rgba(226,228,231,0), rgba(226,228,231,1), rgba(226,228,231,0));
 }
+
+#header a:link, 
+#header a:visited {
+  background-color: #eee;
+  border-radius: 4px;
+  color: #333;
+  padding: 4px 5px;
+  text-align: center; 
+  text-decoration: none;
+  display: inline-block;
+  margin-top:10px;
+}
+
+#header a:hover, 
+#header a:active {
+  background-color: #e2e4e7;
+}
+
+#header #expandButton {
+ background-color: transparent;
+ border:none;
+ font-size: large;
+}

@@ -138,40 +138,40 @@ class ResourceView extends Component {
 
                 <div className="header">
 
-                    Timelines&nbsp;<select id="timelines" onChange={this.onTimelinesChanged.bind(this)} defaultValue="3">
+                    Timelines<select id="timelines" onChange={this.onTimelinesChanged.bind(this)} defaultValue="3">
                         <option value="1">1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
                     </select>
-                    Visible cells&nbsp;<input id="visibleRows" maxLength="2" size="2" defaultValue={this.calProps.resourceViewSettings.visibleCells} onBlur={this.onVisibleCellsChanged.bind(this)} />
+                    Visible cells<input id="visibleRows" maxLength="2" size="2" defaultValue={this.calProps.resourceViewSettings.visibleCells} onBlur={this.onVisibleCellsChanged.bind(this)} />
 
-                    Top timeline : unit&nbsp;<select id="ttunit" onChange={this.onTTUnitChanged.bind(this)} defaultValue="6">
+                    Top timeline : unit<select id="ttunit" onChange={this.onTTUnitChanged.bind(this)} defaultValue="6">
                         <option value="2">Hour</option>
                         <option value="3">Day</option>
                         <option value="4">Week</option>
                         <option value="5">Month</option>
                         <option value="6">Year</option>
                     </select>
-                    count&nbsp;<input id="ttcount" maxLength="2" size="2" defaultValue={this.calProps.resourceViewSettings.topTimelineSettings.unitCount} onBlur={this.onTTCountChanged.bind(this)} />
+                    count<input id="ttcount" maxLength="2" size="2" defaultValue={this.calProps.resourceViewSettings.topTimelineSettings.unitCount} onBlur={this.onTTCountChanged.bind(this)} />
 
-                    Middle timeline : unit&nbsp;<select id="mtunit" onChange={this.onMTUnitChanged.bind(this)} defaultValue="5">
+                    Middle timeline : unit<select id="mtunit" onChange={this.onMTUnitChanged.bind(this)} defaultValue="5">
                         <option value="2">Hour</option>
                         <option value="3">Day</option>
                         <option value="4">Week</option>
                         <option value="5">Month</option>
                         <option value="6">Year</option>
                     </select>
-                    count&nbsp;<input id="mtcount" maxLength="2" size="2" defaultValue={this.calProps.resourceViewSettings.middleTimelineSettings.unitCount} onBlur={this.onMTCountChanged.bind(this)} />
+                    count<input id="mtcount" maxLength="2" size="2" defaultValue={this.calProps.resourceViewSettings.middleTimelineSettings.unitCount} onBlur={this.onMTCountChanged.bind(this)} />
 
 
-                    Bottom timeline : unit&nbsp;<select id="btunit" onChange={this.onBTUnitChanged.bind(this)} defaultValue="3">
+                    Bottom timeline : unit<select id="btunit" onChange={this.onBTUnitChanged.bind(this)} defaultValue="3">
                         <option value="2">Hour</option>
                         <option value="3">Day</option>
                         <option value="4">Week</option>
                         <option value="5">Month</option>
                         <option value="6">Year</option>
                     </select>
-                    count&nbsp;<input id="btcount" maxLength="2" size="2" defaultValue={this.calProps.resourceViewSettings.bottomTimelineSettings.unitCount} onBlur={this.onBTCountChanged.bind(this)} />
+                    count<input id="btcount" maxLength="2" size="2" defaultValue={this.calProps.resourceViewSettings.bottomTimelineSettings.unitCount} onBlur={this.onBTCountChanged.bind(this)} />
 
                     <button onClick={(e) => this.group(1, e)}>
                         Group by contacts</button>

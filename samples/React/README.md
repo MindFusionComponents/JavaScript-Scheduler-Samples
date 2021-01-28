@@ -62,5 +62,5 @@ telephone for technical support:
 
 ***** COPYRIGHTS *****
 
-Copyright (C) 2018-2019, MindFusion LLC, Bulgaria
+Copyright (C) 2018-2020, MindFusion LLC, Bulgaria
 All rights reserved.

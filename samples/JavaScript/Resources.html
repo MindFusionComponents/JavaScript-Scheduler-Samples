@@ -6,8 +6,9 @@
 	<link rel="stylesheet" type="text/css" href="themes/light.css" />
 </head>
 <body>
-	<div id="header" style="height: 59px;">
-		<div style="float: left;">
+	<div id="header" style="height: 89px;">
+        <div style="float: left; margin-left: 5px;">
+            <a href="index.html" style="margin-left: 10px;">Index</a> &nbsp;
 			<button onclick="changeView(3)">
 				Horizontal List</button>
 			<button onclick="changeView(-1)">
@@ -35,13 +36,14 @@
 					Clear filter</button>
 			</div>
 		</div>
-		<div style="float: right; margin-right: 5px; margin-top: 17px;">
-			<a href="Resources.js" style="margin-right: 10px;">View source</a>
-			<button id="expandButton" onclick="onExpandCollapse()">
-				&gt;</button>
-		</div>
+        <div style="float: right; margin-right: 5px;">
+            <a href="Resources.js" style="margin-right: 10px;">View source</a>
+            <button id="expandButton" onclick="onExpandCollapse()">
+                &rsaquo;
+            </button>
+        </div>
 	</div>
-	<div id="info" style="top: 70px; bottom: 24px;">
+	<div id="info" style="top: 100px; bottom: 24px;">
 		<div id="infoTab" style="padding: 10px;">
 			<h1>
 				About this sample</h1>
@@ -54,7 +56,7 @@ Grouping the calendar creates separate rows or columns for each resource and can
 			</p>
 		</div>
 	</div>
-	<div id="content" style="top: 70px; bottom: 24px;">
+	<div id="content" style="top: 100px; bottom: 24px;">
 		<div style="position: absolute; width: 100%; height: 100%;">
 			<div id="calendar" style="height: 100%; width: 100%;">
 			</div>
