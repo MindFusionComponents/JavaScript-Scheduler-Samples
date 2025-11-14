@@ -1,27 +1,15 @@
 {
-  "name": "scheduler-library",
-  "author": "MindFusion LLC <info@mindfusion.eu> (https://mindfusion.eu)",
-  "version": "1.0.1",
-  "description": "Library for calendars, timetables and schedules with events and resources.",
-  "keywords": [
-    "calendar library",
-    "scheduler",
-    "timetable",
-    "monthly calendar",
-    "appointment plan"
-  ],
-  "homepage": "https://mindfusion.eu/javascript-scheduler.html",
-  "license": "SEE LICENSE IN LICENSE.txt",
+  "name": "javascript-scheduler-samples",
+  "version": "1.0.0",
+  "description": "MindFusion JavaScript Scheduler Samples",
   "main": "index.js",
-  "files": [
-    "index.js",
-    "lib",
-    "samples",
-    "localization"
-  ],
-  "types": "jsplanner.d.ts",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/MindFusionComponents/JavaScript-Scheduler-Samples.git"
+  "scripts": {
+    "start": "npx http-server src --open"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "http-server": "^14.1.1"
   }
 }

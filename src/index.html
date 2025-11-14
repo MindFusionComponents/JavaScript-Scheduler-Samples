@@ -1,0 +1,145 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta charset="utf-8" />
+	<title>MindFusion.Scheduling for JavaScript Samples</title>
+	<style type="text/css">
+		body {
+			font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+			margin: 0;
+			display: flex;
+			flex-direction: column;
+			height: 100vh;
+			background-color: #f8f9fa;
+		}
+
+		#header {
+			background-color: #343a40;
+			color: white;
+			padding: 15px;
+			text-align: center;
+			font-size: 1.5em;
+			box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+		}
+
+		#main-container {
+			display: flex;
+			flex: 1;
+			overflow: hidden;
+		}
+
+		#sidebar {
+			width: 280px;
+			background-color: #495057;
+			color: white;
+			padding: 20px;
+			overflow-y: auto;
+			box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+		}
+
+		#sidebar h3 {
+			color: #dee2e6;
+			border-bottom: 2px solid #6c757d;
+			padding-bottom: 10px;
+			margin-top: 0;
+		}
+
+		#sidebar a {
+			display: block;
+			color: #f8f9fa;
+			text-decoration: none;
+			padding: 10px 15px;
+			border-radius: 4px;
+			margin-bottom: 8px;
+			transition: background-color 0.3s, color 0.3s;
+		}
+
+		#sidebar a:hover, #sidebar a.active {
+			background-color: #c71c22;
+			color: white;
+		}
+
+		#content {
+			flex: 1;
+			padding: 0;
+			overflow: hidden;
+		}
+
+		#content iframe {
+			width: 100%;
+			height: 100%;
+			border: none;
+		}
+
+		#footer {
+			background-color: #343a40;
+			color: white;
+			padding: 10px;
+			text-align: center;
+			font-size: 0.9em;
+		}
+	</style>
+</head>
+<body>
+	<div id="header">
+		MindFusion.Scheduling for JavaScript Samples
+	</div>
+	<div id="main-container">
+		<div id="sidebar">
+			<h3>Samples</h3>
+			<a href="MinApp.html" target="chart-frame">Min App</a>
+			<a href="MonthView.html" target="chart-frame">Month View</a>
+			<a href="WeekView.html" target="chart-frame">Week View</a>
+			<a href="ListView.html" target="chart-frame">List View</a>
+			<a href="Timetable.html" target="chart-frame">Timetable</a>
+			<a href="ResourceView.html" target="chart-frame">Resource View</a>
+			<a href="Views.html" target="chart-frame">Views</a>
+			<a href="Items.html" target="chart-frame">Items</a>
+			<a href="Resources.html" target="chart-frame">Resources</a>
+			<a href="Interactions.html" target="chart-frame">Interactions</a>
+			<a href="DualView.html" target="chart-frame">DualView</a>
+			<a href="CustomItem.html" target="chart-frame">Custom Item</a>
+			<a href="Booking.html" target="chart-frame">Booking</a>
+			<a href="GardenCalendar.html" target="chart-frame">Garden Calendar</a>
+			<a href="Holidays.html" target="chart-frame">Holidays</a>
+			<a href="FirstSchedule.html" target="chart-frame">Tutorial</a>
+		</div>
+		<div id="content">
+			<iframe name="chart-frame" src="about:blank"></iframe>
+		</div>
+	</div>
+	<div id="footer">
+		<span id="copyright"></span>
+	</div>
+	<script>
+		document.addEventListener("DOMContentLoaded", function() {
+			const links = document.querySelectorAll("#sidebar a");
+			const iframe = document.querySelector("iframe[name='chart-frame']");
+
+			// Set the first link as active and load it
+			if(links.length > 0) {
+				links[0].classList.add("active");
+				iframe.src = links[0].href;
+			}
+
+			links.forEach(link => {
+				link.addEventListener("click", function(e) {
+					// No need for preventDefault as target is handled by iframe
+					
+					// Remove active class from all links
+					links.forEach(l => l.classList.remove("active"));
+					
+					// Add active class to the clicked link
+					this.classList.add("active");
+				});
+			});
+
+			// Update copyright year
+			const copyrightSpan = document.getElementById("copyright");
+			if (copyrightSpan) {
+				copyrightSpan.innerHTML = `&copy; ${new Date().getFullYear()} MindFusion. All rights reserved.`;
+			}
+		});
+	</script>
+</body>
+</html>
